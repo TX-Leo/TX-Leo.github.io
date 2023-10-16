@@ -88,33 +88,54 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2310.08602" id="SafeDPA">
+                <papertitle>Progressive Adaptive Chance-Constrained Safeguards for Reinforcement Learning</papertitle>
+              </a>
+              <br>
+              Wenli Xiao*, <b>Tairan He*</b>, John Dolan, Guanya Shi 
+              <br>
+              Under review, &nbsp;2023&nbsp;
+              <br>
+              <a href="https://arxiv.org/abs/2310.08602">ArXiv</a>
+              <br>
+              <font color='gray'>A critical goal of autonomy and artificial intelligence is enabling autonomous robots to rapidly adapt in dynamic and uncertain environments. Classic adaptive control and safe control provide stability and safety guarantees but are limited to specific system classes. In contrast, policy adaptation based on reinforcement learning (RL) offers versatility and generalizability but presents safety and robustness challenges. We propose SafeDPA, a novel RL and control framework that simultaneously tackles the problems of policy adaptation and safe reinforcement learning. SafeDPA jointly learns adaptive policy and dynamics models in simulation, predicts environment configurations, and fine-tunes dynamics models with few-shot real-world data. A safety filter based on the Control Barrier Function (CBF) on top of the RL policy is introduced to ensure safety during real-world deployment. We provide theoretical safety guarantees of SafeDPA and show the robustness of SafeDPA against learning errors and extra perturbations. Comprehensive experiments on (1) classic control problems (Inverted Pendulum), (2) simulation benchmarks (Safety Gym), and (3) a real-world agile robotics platform (RC Car) demonstrate great superiority of SafeDPA in both safety and task performance, over state-of-the-art baselines. Particularly, SafeDPA demonstrates notable generalizability, achieving a 300% increase in safety rate compared to the baselines, under unseen disturbances in real-world experiments.</font>
+            </td>
+          </tr>
+        </tbody></table>
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2310.03379" id="ACS">
+                <papertitle>Progressive Adaptive Chance-Constrained Safeguards for Reinforcement Learning</papertitle>
+              </a>
+              <br>
+              Zhaorun Chen, Binhao Chen, <b>Tairan He</b>, Liang Gong, Chengliang Liu
+              <br>
+              Under review, &nbsp;2023&nbsp;
+              <br>
+              <a href="https://arxiv.org/abs/2310.03379">ArXiv</a>
+              <br>
+              <font color='gray'>Safety assurance of Reinforcement Learning (RL) is critical for exploration in real-world scenarios. In handling the Constrained Markov Decision Process, current approaches experience intrinsic difficulties in trading-off between optimality and feasibility. Direct optimization methods cannot strictly guarantee state-wise in-training safety while projection-based methods are usually inefficient and correct actions through lengthy iterations. To address these two challenges, this paper proposes an adaptive surrogate chance constraint for the safety cost, and a hierarchical architecture that corrects actions produced by the upper policy layer via a fast Quasi-Newton method. Theoretical analysis indicates that the relaxed probabilistic constraint can sufficiently guarantee forward invariance to the safe set. We validate the proposed method on 4 simulated and real-world safety-critical robotic tasks. Results indicate that the proposed method can efficiently enforce safety (nearly zero-violation), while preserving optimality (+23.8%), robustness and generalizability to stochastic real-world settings.</font>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2302.03122" id="SafeRL-Survey">
                 <papertitle>State-wise Safe Reinforcement Learning: A Survey</papertitle>
               </a>
               <br>
               Weiye Zhao, <b>Tairan He</b>, Rui Chen, Tianhao Wei, Changliu Liu
-<!--               <br> -->
-<!--               <em>Conference on Neural Information Processing Systems (NeurIPS)</em>,&nbsp;2022&nbsp; -->
-<!--               Conference on Neural Information Processing Systems (NeurIPS) DeepRL Workshop, 2022  -->
               <br>
               <em>International Joint Conference on Artificial Intelligence (IJCAI)</em>, &nbsp;2023&nbsp;
               <br>
               <a href="https://arxiv.org/abs/2302.03122">ArXiv</a>
-<!--               &nbsp;/&nbsp;
-              <a href="https://github.com/oscardhc/Forum"> iOS Code</a>
-              &nbsp;/&nbsp;
-              <a href="http://wukefenggao.cn"> Project Page</a>
-              &nbsp;/&nbsp;
-              <a href="https://www.bilibili.com/video/BV1Rp4y187ZJ"> Farewell Video</a> -->
-              <!-- <font color="red"><em><strong>(oral)</strong></em></font> -->
-<!--               <em>TPAMI</em>, 2017 -->
-<!--               <a href="http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/mcg/">project page</a> /
-              <a href="data/PontTusetTPAMI2017.bib">bibtex</a> /
-              <a href="https://drive.google.com/file/d/1AiB78Fy7QVA3KqgcooyzMAC5L8HhNzjz/view?usp=sharing">fast eigenvector code</a> -->
-<!--               <p></p> -->
               <br>
               <font color='gray'>Despite the tremendous success of Reinforcement Learning (RL) algorithms in simulation environments, applying RL to real-world applications still faces many challenges. A major concern is safety, in another word, constraint satisfaction. State-wise constraints are one of the most common constraints in real-world applications and one of the most challenging constraints in Safe RL. Enforcing state-wise constraints is necessary and essential to many challenging tasks such as autonomous driving, robot manipulation. This paper provides a comprehensive review of existing approaches that address state-wise constraints in RL. Under the framework of State-wise Constrained Markov Decision Process (SCMDP), we will discuss the connections, differences, and trade-offs of existing approaches in terms of (i) safety guarantee and scalability, (ii) safety and reward performance, and (iii) safety after convergence and during training. We also summarize limitations of current methods and discuss potential future directions.</font>
-<!--               <p>This paper subsumes our CVPR 2014 paper.</p> -->
             </td>
           </tr>
         </tbody></table>
