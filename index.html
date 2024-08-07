@@ -1,613 +1,367 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Zhi Wang</title>
-  
-  <meta name="author" content="Leo Wang">
+  <meta name="author" content="Zhi Wang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-<!--   <link rel="icon" type="image/png" href="images/seal_icon.png"> -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    name {
+      font-size: 5em;
+    }
+
+    heading {
+      font-size: 2.5em;
+    }
+
+    papertitle {
+      font-size: 1.2em;
+    }
+
+    .container {
+      width: 75%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .header {
+      background-image: url('images/nvidia-robotics-0.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 12rem 0; /* Adjust padding as needed */
+      position: relative; /* To position the title over the image */
+    }
+
+    .page-title {
+      color: #ffffff; 
+      font-size: 1.8em; 
+      margin-bottom: 0;
+      position: absolute; /* Position the title */
+      bottom: 10px; /* Adjust distance from the bottom */
+      left: 50%;
+      transform: translateX(-50%); /* Center the title horizontally */
+      /* Add text shadow for better visibility on image backgrounds if needed */
+      /* text-shadow: 20px 20px 40px rgba(100, 100, 100, 0.5); */
+    }
+
+    .content {
+      padding: 40px;
+      background: #fff;
+      margin: 30px 0 30px 0;
+      border-bottom: #35424a 3px solid;
+    }
+
+    .content:last-child {
+      margin-bottom: 0;
+    }
+
+    .content p {
+      margin: 0px 0px 20px;
+      font-size: 16px;
+    }
+
+    .intro .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .intro-text {
+      flex: 1.8; /* Adjust the ratio as needed, e.g., 2:1 for text:image */
+      margin-right: 5px; /* Add spacing between columns */
+    }
+
+    .profile-info {
+      flex: 1;
+      text-align: center; 
+    }
+
+    .profile-info a {
+      display: block; /* Make each link a block element */
+      margin-bottom: 20px; /* Adjust spacing between links */
+    }
+
+    .experience-item {
+      display: flex;
+      align-items: center; /* Align items vertically */
+      margin-bottom: 50px;
+    }
+
+    .experience-item img {
+      margin-right: 80px; 
+    }
+
+    footer {
+      background: #35424a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
-
 <body>
-  <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Zhi (Leo) Wang</name>
-              </p>
-              <p>Hi, there. I'm a senior student at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, majoring in <a href="https://www.ee.tsinghua.edu.cn/en/">Electronic Engineering</a>.
-              </p>
-              <p>Currently, I am fortunate to work with <a href="http://robotouch.ri.cmu.edu/yuanwz/">Prof. Wenzhen Yuan</a> as a research assistant at <a href="https://labs.ri.cmu.edu/robotouch/"> RoboTouch Lab</a>, <a href="https://cs.illinois.edu/">UIUC CS</a>.
-              </p>
-              <p> Previously, I was honored to be a research intern at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"> Microsoft Research</a>, advised by <a href="https://www.microsoft.com/en-us/research/people/shaohanh/">Senior Researcher Shaohan Huang</a>.
-              </p>  
-              <p> Meanwhile, I also spent time at <a href="https://iiis.tsinghua.edu.cn/en/">Institute for Interdisciplinary Information Sciences (IIIS)</a>, advised by <a href="https://people.iiis.tsinghua.edu.cn/~jychen/">Prof. Jianyu Chen</a>.
-              </p>
-              <p>
-              Currently, my research interests lie in the intersection of <b style="font-weight: bold;"><span style="color: red;">Robotics and AI</span></b>. My ultimate goal is to develop intelligent robotic agents capable of performing complex manipulation tasks.
-              </p>
-              <p> Feel free to talk to me about anything, like Research/Life/Hobby. I enjoy having some deep conversations with anyone else.
-              </p>
-              <p>
-                <span style="color: red;">I am actively applying for a Ph.D. position in 2025 Fall!</span>
-              </p>
-                <!-- </p>
-              <p>Email: tx.leo.wz@gmail.com
-              </p> -->
-<!--               <p style="text-align:center"><font color="red"><em><strong>I will apply for PhD programs starting in 2023 Fall.</strong></em></font>
-              </p> -->
-              
-<!--               <p>
-                At Google I've worked on <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://www.google.com/get/cardboard/jump/">Jump</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, and <a href="https://www.youtube.com/watch?v=JSnB06um5r4">Glass</a>. I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a> and funded by the <a href="http://www.nsfgrfp.org/">NSF GRFP</a>. I did my bachelors at the <a href="http://cs.toronto.edu">University of Toronto</a>.
-                I've received the <a href="https://www2.eecs.berkeley.edu/Students/Awards/15/">C.V. Ramamoorthy Distinguished Research Award</a> and the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>.
-              </p> -->
-              <br>
-<!--               <p style="text-align:center">
-                  I'm looking for summer research opportunities in 2021!
-              </p> -->
-              <p style="text-align:center">
-                <a href="mailto:tx.leo.wz@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="data/CV-Zhi Wang.pdf">CV(2023.10)</a> &nbsp/&nbsp
-                <!-- <a href="https://scholar.google.com/citations?user=TVWH2U8AAAAJ">Google Scholar</a> &nbsp/&nbsp -->
-                <a href="https://github.com/TX-Leo">GitHub</a> &nbsp/&nbsp
-                <!-- <a href="https://twitter.com/TairanHe99">Twitter</a> &nbsp/&nbsp -->
-                <a href="https://www.linkedin.com/in/tx-leo/">LinkedIn</a> &nbsp/&nbsp
-                <!-- <a href="https://space.bilibili.com/14145636">Bilibili</a>  -->
-<!--                 <a href="data/JonBarron-bio.txt">Biography</a> &nbsp/&nbsp -->
-<!--                 <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Google Scholar</a>  --><!-- &nbsp/&nbsp -->
-                <a href="https://twitter.com/TX_Leo_Wang">Twitter</a> &nbsp/&nbsp
-                <a href="https://www.instagram.com/tx.leo.wang/">Instagram</a> &nbsp/&nbsp
-                <a href="images/WeChat-Zhi Wang.jpg">WeChat</a> &nbsp/&nbsp
-                <br>
-                <br>
-                <a href="https://www.wolai.com/tx-leo/hihtxzijGdrNTYCYeUJbew">📷Click Here to Check My Photography Gallery!</a>
-              </p>
-            </td>
+  <header class="header">
+    <div class="container">
+      <h1 class="page-title">“Robotics and other combinations will make the world pretty fantastic compared with today.” -- Bill Gates.</h1> 
+    </div>
+  </header>
 
-            <td style="padding:2.5%;width:26%;max-width:26%">
-              <a href="images/zhi wang.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/zhi wang.jpg" class="hoverZoomLink"></a>
-              <br>
-              <br>
-              <p style="text-align:center">
-              <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftx-leo.github.io&count_bg=%2365A4DD&title_bg=%23B8B6B6&icon=spacex.svg&icon_color=%23000000&title=click&edge_flat=false"/></a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+  <div class="container">
+    <section class="content intro">
+      <div class="container">
+        <div class="intro-text">
+          <p>Hi, there. I'm a senior student at <a href="https://www.tsinghua.edu.cn/en/"><b>Tsinghua University</b></a>, majoring in <a href="https://www.ee.tsinghua.edu.cn/en/"><b>Electronic Engineering</b></a>.</p>
+          <p>
+            Currently, I am fortunate to work with <a href="http://robotouch.ri.cmu.edu/yuanwz/"><b>Prof. Wenzhen Yuan</b></a> as a research assistant at <a href="https://labs.ri.cmu.edu/robotouch/"><b>RoboTouch Lab</b></a>, <a href="https://cs.illinois.edu/"><b>UIUC CS</b></a>.
+          </p>
+          <p>
+            Previously, I was honored to be a research intern at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"><b>Microsoft Research</b></a>, advised by <a href="https://www.microsoft.com/en-us/research/people/shaohanh/"><b>Senior Researcher Shaohan Huang</b></a>.
+          </p>
+          <p>
+            Meanwhile, I also spent time at <a href="https://iiis.tsinghua.edu.cn/en/"><b>Institute for Interdisciplinary Information Sciences (IIIS)</b></a>, advised by <a href="https://people.iiis.tsinghua.edu.cn/~jychen/"><b>Prof. Jianyu Chen</b></a>.
+          </p>
+          <p>
+            Currently, my research interests lie in the intersection of <b><span style="color: red;">Robotics and AI</span></b>. My ultimate goal is to develop intelligent robotic agents capable of performing complex manipulation tasks.
+          </p>
+          <p>
+            <b><span style="color: red;">I am actively applying for a Ph.D. position in 2025 Fall!</span></b>
+          </p>
+          <p style="text-align:center">
+            <a href="mailto:tx.leo.wz@gmail.com"><b>Email</b></a>  / 
+            <a href="data/CV-Zhi-Wang-2.pdf"><b>CV</b></a>  / 
+            <!-- <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"><b>Google Scholar</b></a>  /  -->
+            <a href="https://github.com/Leo-TX"><b>GitHub</b></a>  / 
+            <a href="https://www.linkedin.com/in/tx-leo/"><b>LinkedIn</b></a>  / 
+            <a href="https://twitter.com/TX_Leo_Wang"><b>Twitter</b></a> /
+            <!-- <a href="https://www.instagram.com/tx.leo.wang/"><b>Instagram</b></a> -->
+            <br>
+            <br>
+          </p>
+        </div>
+        <div class="profile-info">
+          <img style="width: 100%; max-width: 500px;" alt="profile photo" src="images/Zhi-Wang-1.jpg" class="hoverZoomLink">
+          <br>
+          <br>
+          <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftx-leo.github.io&count_bg=%2365A4DD&title_bg=%23B8B6B6&icon=spacex.svg&icon_color=%23000000&title=click&edge_flat=false" /></a>
+          <a href="https://www.wolai.com/tx-leo/hihtxzijGdrNTYCYeUJbew"><b>📷 Click Here to Check My Photography Gallery!</b></a>
+          <!-- <a href="https://space.bilibili.com/YOUR_BILIBILI_ID"><b>Bilibili</b></a> -->
+        </div>
+      </div>
+    </section>
 
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research Interests</heading>
-              <p>
-                Currently, my research interests lie in the fileds of robotics, robot learning, machine learning and robotic manipulation.
-                More specifically, I am actively exploring the application of machine learning techiques and mutimodual large lauguage models(MLLMs) in robotic tasks, particularly in the area of robotic grasping. 
-                
-                My ultimate goal is to develop intelligent robotic agents capable of performing complex manipulation tasks.
-                <!-- <br>
-                <br>
-                To accomplish this, I explore ways to <u>bridge the gap between learning and control</u>, thereby creating a unified framework for robotics. Through my research, I aim to expand the capabilities of robots and transform how they can be used in a variety of fields. Ultimately, my goal is to change people's perceptions of robots and demonstrate the true potential of this exciting technology. -->
-
-<!--                 Currently, I concetrate on the data-driven RL tasks (e.g., <b>imitation learning</b> and <b>batch reinforcement learning</b>) and <b>representation learning</b> in RL.  -->
-<!-- 
-                I keep reading an inspiring paper every day, and share my understanding and notes in the  <a href="https://www.zhihu.com/column/c_1300374076980932608"> Zhihu column</a>. -->
-                <!-- Representative papers are <span class="highlight">highlighted</span>.
-              </p>
-            </td>
-          </tr>
-        </tbody></table> --> 
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading>News</heading>
-              </td>
-            </tr>
-            <tr>
-        </tbody></table>
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-                <b>·[2024/03]</b>, &emsp; Excited to join RoboTouch Lab as a reseacher assistant at <span style="color: red;">UIUC</span>.
-                <br>
-                <b>·[2023/03]</b>, &emsp; <span style="color: red;">KOSMOS-E</span> was under review on IROS 2024 .
-                <br>
-                <b>·[2023/06]</b>, &emsp; I started my internship at <span style="color: red;">Microsoft Research</span>.
-                <br>
-                <b>·[2023/04]</b>, &emsp; I started my internship at <span style="color: red;">EncoSmart Technology</span>.
-                <br>
-              </td>
-            </tr>
-        </tbody></table>
-  
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Education</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <b>Tsinghua University</b>, Beijing, China
-              <br>
-              B.Eng in EE • Aug. 2020 to Present
-              </br>
-            </td>
-            <td style="padding:0px 20px 0px 20px;width:10%;vertical-align:middle"><img src="images/thu-logo.png" width="75" height="75"></td>
-          </tr>
-        </tbody></table>
-
-
-
-
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Selected Research</heading>
-              (* equal contribution)
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/kosmos-e.png" width="320" height="167"></td> 
-            <td width="75%" valign="center">
-              <a href="https://github.com/TX-Leo/PID-GraspNet" id="SafeDPA">
-                <papertitle>KOSMOS-E: Learning to Follow Instruction for Robotic Grasping</papertitle>
+    <section class="content">
+        <heading><b>Selected Research</b></heading>
+        <div style="display: flex; align-items: center;">
+            <div style="flex: 1;">
+              <img src="images/doorman.jpg" width="400" height="250">
+            </div>
+            <div style="flex: 1.5;">
+              <a href="">
+                <papertitle><b>DoorMan: Close-Loop Task Planning and Manipulation for Articulated Objects in the Wild with Haptic
+                    Feedback</b></papertitle>
               </a>
               <br>
-              <b>Zhi Wang*</b>, Xun Wu*, Shaohan Huang 
+              <b>Zhi Wang</b>,Yuchen Mo, Shengmiao Jin, Wenzhen Yuan
               <br>
-              <span style="color: red;">Under review, IROS 2024</span>.
+              <span style="color: red;">Under Review (ICRA), 2025</span>.
               <br>
-              <a href="https://github.com/buaahsh/kosmos-e/tree/kosmos-rt-v2">GitHub(Coming Soon..)</a>
-              &nbsp;/&nbsp;
-              <a href="">ArXiv</a>
-              &nbsp;/&nbsp;
-              <a href="https://youtu.be/ZUHpsCZ5nXc">Video</a>
-              &nbsp;/&nbsp;
+              <a href=""><b>Website</b></a>
+               / 
+              <a href=""><b>Paper</b></a>
+               / 
+              <a href="c"><b>Video</b></a>
+               / 
               <br>
-              <font color='gray'>We introduce KOSMOS-E, a Multimodal Large Language Model (MLLM) that leverages instruction-following robotic grasping data to enhance capabilities for precise and intricate robotic grasping maneuvers.  </font>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/xiaoxing.jpg" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <a href="" id="ACS">
-                <papertitle>XiaoXing: Bipedal Humanoid Robot</papertitle>
-              </a>
-              <br>
-              Zonghuan Wu, <b>Zhi Wang</b>, Xianghe Wang, Jianyu Chen
-              <br>
-              <br>
-              <font color='gray'>Developed a bipedal humanoid robot, showcasing a remarkable combination of high performance and cost-effectiveness. </font>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/tinker.jpg" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <a href="https://github.com/tinkerfuroc" id="SafeRL-Survey">
-                <papertitle>Tinker: Home Service Robot</papertitle>
-              </a>
-              <br>
-              <b>Zhi Wang</b>, Xinyao Qin, Haoyue Liu
-              <br>
-              <a href="https://github.com/tinkerfuroc">GitHub</a>
-              &nbsp;/&nbsp;
-              <br>
-              <font color='gray'>Developed a home service robot equipped with a mobile base and robotic manipulator, boasting a diverse range of functionalities including service guidance, objects recognition, visual grasping, speech recognition, radar positioning, and robotic arm manipulation. This robot has consistently participated in the prestigious Robocup@Home group competition.</font>
-            </td>
-          </tr>
-        </tbody></table> -->
-
-        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Projects</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table> -->
-
-        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:100%;vertical-align:middle"> 
-              <a href="http://wukefenggao.cn" id="wkfg">
-                <papertitle>SJTU Anonymous Forum 「无可奉告」</papertitle>
-              </a>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/wkfgicon.png" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <br>
-              <a href="https://github.com/TairanHe/SJTU-Anonymous_Forum"> Android Code</a>
-              &nbsp;/&nbsp;
-              <a href="https://github.com/oscardhc/Forum"> iOS Code</a>
-              &nbsp;/&nbsp;
-              <a href="http://wukefenggao.cn"> Project Page</a>
-              &nbsp;/&nbsp;
-              <a href="https://www.bilibili.com/video/BV1Rp4y187ZJ"> Farewell Video</a>
-              <br>
-              <p>A carefree forum platform for SJTUers sharing and talking with anonymous identity.</p>
-              <p>More than <font color="red"><em><strong>10000+</strong></em></font> users used「无可奉告」in the SJTU campus.</p>
-            </td>
-          </tr>
-        </tbody></table> -->
-
-
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr> 
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <b>Shanghai Jiao Tong University</b>, Shanghai, China
-              <br>
-              B.E. in Computer Science • Aug. 2018 to Jun. 2023
-              </br>
-            </td>
-            <td style="padding:0px 20px 0px 20px;width:10%;vertical-align:middle"><img src="images/sjtu-logo.png" width="75" height="75"></td>
-          </tr>
-        </tbody></table> -->
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Experiences</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <a href="https://labs.ri.cmu.edu/robotouch/"> RoboTouch Lab</a>, <a href="https://cs.illinois.edu/"> UIUC CS</a>
-              <br>
-              Research Assistant • Mar. 2024 to Sep. 2024
-              <br>
-              Advisor: <a href="http://robotouch.ri.cmu.edu/yuanwz/"> Prof.Wenzhen Yuan </a>
-              </br>
-            </td>
-            <td style="padding:0px 24px 0px 20px;width:10%;vertical-align:middle"><img src="images/UIUC.jpg" width="65" height="65"></td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <a href="https://www.microsoft.com/en-us/research/group/natural-language-computing/">NLC Group</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"> Microsoft Research</a>
-              <br>
-              Research Intern • June. 2023 to Mar. 2024
-              <br>
-              Advisor: <a href="https://www.microsoft.com/en-us/research/people/shaohanh/"> Shaohan Huang </a>
-              </br>
-            </td>
-            <td style="padding:0px 24px 0px 20px;width:10%;vertical-align:middle"><img src="images/msft-logo.png" width="65" height="65"></td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <a href="http://encosmart.com/home"> EncoSmart Technology</a>
-              <br>
-              Research Intern • Apr. 2023 to Jun. 2023
-              <!-- <br>
-              Advisor: <a href="http://wnzhang.net"> Prof. Weinan Zhang</a>
-              </br> -->
-            </td>
-            <td style="padding:0px 20px 0px 20px;width:10%;vertical-align:middle"><img src="images/encosmart-logo.png" width="75" height="75"></td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <a href="https://github.com/tinkerfuroc"> FuRoC</a>, <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>
-              <br>
-              Research Member • Jan. 2022 to Mar. 2023
-              <!-- <br>
-              Advisor: <a href="http://wnzhang.net"> Prof. Weinan Zhang</a>
-              </br> -->
-            </td>
-            <td style="padding:0px 20px 0px 20px;width:10%;vertical-align:middle"><img src="images/furoc-logo.png" width="75" height="75"></td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:75%;vertical-align:middle">
-              <a href="https://group.iiis.tsinghua.edu.cn/~isrlab/"> ISR Lab</a>, <a href="https://iiis.tsinghua.edu.cn/about/"> Tsinghua University IIIS</a>
-              <br>
-              Research Assistant • Sep. 2021 to Sep. 2022
-              <br>
-              Advisor: <a href="https://people.iiis.tsinghua.edu.cn/~jychen/"> Prof. Jianyu Chen</a>
-              </br>
-            </td>
-            <td style="padding:0px 20px 0px 20px;width:10%;vertical-align:middle"><img src="images/thu-logo.png" width="75" height="75"></td>
-          </tr>
-        </tbody></table>
-
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Reviewer Service</heading>
-              <p>
-              International Conference on Learning Representations <b>(ICLR)</b>, 2024
-              <br>
-              IEEE Conference on Decision and Control <b>(CDC)</b>, 2023
-              <br>  
-              Conference on Neural Information Processing Systems <b>(NeurIPS)</b>, 2023
-              <br>
-              Learning for Dynamics & Control Conference <b>(L4DC)</b> 2023
-              <br>
-              AAAI Conference on Artificial Intelligence <b>(AAAI)</b> 2023, 2024
-              <br>
-              Conference on Robot Learning <b>(CoRL)</b> 2022, 2023
-              </p>
-            </td>
-          </tr>
-        </tbody></table> -->
-
-
-<!--         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Projects</heading>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-              <a href="http://wukefenggao.cn" id="wkfg">
-                <papertitle>SJTU Anonymous Forum 「无可奉告」</papertitle>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/wkfgicon.png" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair, CVPR 2021</a>
-              <br><br>
-              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
-              <br><br>
-              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
-            </td>
-          </tr>
-        </tbody></table> -->
-
-
-
-
-        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Robotics Competitions</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/robocup2023.png" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <a href="https://2023.robocup.org/en/home/" id="SafeDPA">
-                <papertitle>Robocup2023</papertitle>
-              </a>
-              <br>
-              <b>RoboCup2023 Humanoid KidSize League</b> 
-              <br>
-              <font color='gray'>Developed a highly capable KidSize humanoid soccer robot, standing at approximately 50cm tall. Leveraging a movable camera mounted on its head and a meticulously crafted motion planning algorithm, our robot exhibited exceptional prowess on the soccer field. Our team achieved a 4th place finish. (3 %) </font>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 0px 20px;width:25%;vertical-align:middle"><img src="images/edc2021.png" width="160" height="160"></td>
-            <td width="75%" valign="center">
-              <a href="" id="SafeDPA">
-                <papertitle>EDC2021</papertitle>
-              </a>
-              <br>
-              <b>Intelligent Robot (Electronic Design Competition)</b> 
-              <br>
-              <font color='gray'>Designed an intelligent and agile robot named Tank with omnidirectional motion capabilities. Through seamless communication with the host computer via Zigbee technology, Tank achieves precise self‑localization, enhancing its overall performance on the field. Stability in motion planning and control is ensured through the implementation of a FOC‑PID closed‑loop design, complemented by the utilization of Kalman filtering techniques. Our team won the winner price.(5 %) </font>
-            </td>
-          </tr>
-        </tbody></table> -->
-
-
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Honors&Awards</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-              <b>·Fourth Place</b>, &emsp;&emsp;&emsp; Jul. 2023 &emsp; RoboCup 2023 Humanoid KidSize League(3%)
-              <br>
-              <b>·THU Scholarship </b>, &emsp; Oct. 2021 &emsp; Science and Technology Innovation Scholarship(1 %)
-              <br>
-              <b>·Third Prize</b>, &emsp;&emsp;&emsp;&emsp; Apr. 2021  &emsp; The 4th Tsinghua University Software Design Competition (5 %)
-              <br>
-              <b>·Third Prize</b>, &emsp;&emsp;&emsp;&emsp; Apr. 2021 &emsp; The 4th Tsinghua University Artificial Intelligence Challenge (5 %)
-              <br>
-              <b>·Winner Price</b>, &emsp;&emsp;&emsp; Dec. 2021 &emsp; The 23rd Electronic Design Competition of Tsinghua University (5 %)
-              <br>
-              <b>·Gaokao|高考 </b>, &emsp;&emsp;&emsp; Jul. 2020 &emsp; Ranked 59𝑡h out of 1 million people with a score of 707/750
-              <br>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Teaching Experience</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
+              <font color='gray'>Proposed DoorMan, a mobile humanoid system that leverages haptics info to close-loop bimanually manipulate articulated objects in the wild.</font>
+            </div>
+          </div>
         
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-              <b>·Teaching Assistant</b>, &emsp; 2022, &emsp; THU 40231212:Intelligent Robots Design and Implementation 
-              <br>
-              <b>·Teaching Assistant</b>, &emsp; 2021, &emsp; THU 20230292:Project Design and Making of Electronic System  
-              <br>
-              <b>·Teaching Assistant</b>, &emsp; 2021, &emsp; THU 01550013:Synthetical Practice of Electronics System Design
-              <br>
-            </td>
-          </tr>
-        </tbody></table>
+          <br>
+          <br>
 
+        <div style="display: flex; align-items: center;">
+          <div style="flex: 1;">
+            <img src="images/kosmos-e.png" width="450" height="250">
+          </div>
+          <div style="flex: 1.5;">
+            <a href="t">
+              <papertitle><b>KOSMOS-E: Learning to Follow Instruction for Robotic Grasping</b></papertitle>
+            </a>
+            <br>
+            <b>Zhi Wang*</b>, Xun Wu*, Shaohan Huang, Li Dong, Wenhui Wang, Shuming Ma, Furu Wei
+            <br>
+            <span style="color: red;">IEEE International Conference on Intelligent Robots and System (IROS), 2024</span>.
+            <br>
+            <a href=""><b>Website</b></a>
+             / 
+            <a href="data/IROS2024_KOSMOS-E.pdf"><b>Paper</b></a>
+             / 
+            <a href=""><b>Arxiv</b></a>
+            / 
+            <a href="https://youtu.be/ZUHpsCZ5nXc"><b>Video</b></a>
+             / 
+            <br>
+            <font color='gray'>Proposed KOSMOS-E, a Multimodal Large Language Model (MLLM) that leverages instruction-following robotic grasping data to enhance capabilities for precise and intricate robotic grasping maneuvers.</font>
+          </div>
+        </div>
+      </section>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>MISC</heading>
-            </td>
-          </tr>
-          <tr>
-        </tbody></table>
+    <section class="content">
+      <heading><b>Education</b></heading>
+      <ul>
+        <li class="experience-item">
+          <img src="images/thu-logo.png" width="100" height="100">
+          <div>
+            <b>Tsinghua University</b>, Beijing, China<br>
+          B.Eng in EE • Aug. 2020 to Present
+          </div>
+        </li>
+        </ul>
+    </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-              <b>·⚽️Football</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite Team:</b> FC Bayern Munich, Germany National Football Team
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite Player:</b> Kaká, Messi, Ibrahimović, Thomas Müller, Lewandowski, Robben and Ribéry
-              <br>
-              <br>
-              <b>·🎧Music</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Music Type:</b> Hip-Hop, R&B, Soul, Pop
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite Musician:</b> Kanye West, Bruno Mars, Ed Sheeran, Shawn Mendes, Billie Eilish, Justin Bieber, Mariah Carey, David Tao, Jay Chou, Khalil Fong, Wang Leehom.
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite Song:</b> David Tao: 沙滩(SP Version), 二十二(SP Version); Jay Chou: 浪漫手机; Eagles: California Hotel; Kanye: Runaway, Stronger, Jesus Walk; Bruno Mars: When I Was Your Man; Ed Sheeran: Perfect; Justin Bieber: Lonely, Off My Face; Billie Eilish: Lovely
-              <br>
-              <br>
-              <b>·📷Photography</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Device:</b>Sony A7M4 + Sony 24-105mm F/4 G OSS + Viltrox 35mm F/1.8; Sony ZV1; DJI Pocket 1; Insta360 GO3; iPhone 14 Pro Max
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Photography Themes:</b>Landscape, Nature, Flowers, Astrophotography, Portrait; I enjoy pre-composition and color grading during post-processing
-              <br>
-              <br>
-              <b>·🎥Movies</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite Movies:</b> Interstellar, The Blind Side, Heidi, The Shawshank Redemption, Intouchables, The Pursuit of Happyness, The Bourne Ultimatum, The Martian, Harry Potter, Batman/Spider-Man
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Favourite TV Dramas:</b> Breaking Bad, Stranger Things, Prison Break
-              <br>
-              <br>
-              <b>·💻Apple/Digital Enthusiasts</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Apple:</b> iPhone 14 Pro Max, MacBook Air(M1), MacBook Pro(2017), iPad Air 3, Apple Watch Series 7, Apple Magic Keyboard with Numeric Keypad, Apple Touch Pad, Airtag
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;<b>Other Device:</b> Sony WH-1000XM5, Logitech G913 TKL(White), Logitech MX Master 3, Lenovo Legion Y7000
-              <br>
-              <br>
-              <b>·🎾Tennis/·🥏Frisbee/·👣Hiking/·💪Working Out/.🚗Travelling</b>
-              <br>
-              <br>
-              <b>🧠Thinking</b>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; I always spend a lot of time in thinking about many things/questions. Like: 
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; 1. Is there a god? 
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; 2. Is there any other life in the cosmos? 
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; 3. What's the meaning of my life? 
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; 4. What should I do to make my life be my life? 
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp; 5. I love to imagine my future life which will raise me up.
-              <br>
-              <br>
-              <b>·🧍Person Who I Admire: <span style="color: red;">My Mom, Kaká, Elon Musk, Kanye West, David Tao, Zhi(Leo) Wang</span></b>
-              <br>
-            </td>
-          </tr>
-        </tbody></table>
+    <section class="content">
+      <heading><b>Experiences</b></heading>
+      <ul>
+        <li class="experience-item">
+          <img src="images/UIUC.jpg" width="100" height="100">
+          <div>
+            <a href="https://labs.ri.cmu.edu/robotouch/"><b>RoboTouch Lab</b></a>, <a href="https://cs.illinois.edu/"><b>UIUC CS</b></a><br>
+            Research Assistant • Mar. 2024 to Sep. 2024<br>
+            Advisor: <a href="http://robotouch.ri.cmu.edu/yuanwz/"><b>Prof. Wenzhen Yuan</b></a>
+          </div>
+        </li>
+        <li class="experience-item">
+          <img src="images/msft-logo.png" width="100" height="100">
+          <div>
+            <a href="https://www.microsoft.com/en-us/research/group/natural-language-computing/"><b>NLC Group</b></a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"><b>Microsoft Research</b></a><br>
+            Research Intern • June. 2023 to Mar. 2024<br>
+            Advisor: <a href="https://www.microsoft.com/en-us/research/people/shaohanh/"><b>Shaohan Huang</b></a>
+          </div>
+        </li>
+        <li class="experience-item">
+          <img src="images/encosmart-logo.png" width="100" height="100"> 
+          <div>
+            <a href="http://encosmart.com/home"><b>EncoSmart Technology</b></a><br>
+            Research Intern • Apr. 2023 to Jun. 2023
+          </div>
+        </li>
+        <li class="experience-item">
+          <img src="images/furoc-logo.png" width="100" height="100">
+          <div>
+            <a href="https://github.com/tinkerfuroc"><b>FuRoC</b></a>, <a href="https://www.tsinghua.edu.cn/en/"><b>Tsinghua University</b></a><br>
+            Research Member • Jan. 2022 to Mar. 2023
+          </div>
+        </li>
+        <li class="experience-item">
+          <img src="images/thu-logo.png" width="100" height="100">
+          <div>
+            <a href="https://group.iiis.tsinghua.edu.cn/~isrlab/"><b>ISR Lab</b></a>, <a href="https://iiis.tsinghua.edu.cn/about/"><b>Tsinghua University IIIS</b></a><br>
+            Research Assistant • Sep. 2021 to Sep. 2022<br>
+            Advisor: <a href="https://people.iiis.tsinghua.edu.cn/~jychen/"><b>Prof. Jianyu Chen</b></a>
+          </div>
+        </li>
+      </ul>
+    </section>    
+    
+    
+      <section class="content">
+        <heading><b>Teaching Experience</b></heading>
+        <ul>
+          <li><b>Teaching Assistant</b>,   2022,   THU 40231212: Intelligent Robots Design and Implementation</li>
+          <li><b>Teaching Assistant</b>,   2021,   THU 20230292: Project Design and Making of Electronic System</li>
+          <li><b>Teaching Assistant</b>,   2021,   THU 01550013: Synthetical Practice of Electronics System Design</li>
+        </ul>
+      </section>
+    
+      <section class="content">
+        <heading><b>MISC</b></heading>
+        <ul>
+          <li>
+            <b>⚽️ Football (MIA SAN MIA)</b><br>
+              <!-- <b>Favourite Team:</b> FC Bayern Munich, Germany National Football Team<br> -->
+              <!-- <b>Favourite Player:</b> Kaká, Messi, Ibrahimović, Thomas Müller, Lewandowski, Robben and Ribéry -->
+          </li>
+          <!-- <br> -->
+          <li>
+            <b>🥏 Frisbee </b><br>
+          </li>
+          <!-- <br> -->
+          <li>
+            <b>🎧 Music</b><br>
+              <!-- <b>Music Type:</b> Hip-Hop, R&B, Soul, Pop<br> -->
+              <!-- <b>Favourite Musician:</b> Kanye West, Bruno Mars, Ed Sheeran, Shawn Mendes, Billie Eilish, Justin Bieber, Mariah Carey, David Tao, Jay Chou, Khalil Fong, Wang Leehom.<br> -->
+              <!-- <b>Favourite Song:</b> David Tao: 沙滩(SP Version), 二十二(SP Version); Jay Chou: 浪漫手机; Eagles: California Hotel; Kanye: Runaway, Stronger, Jesus Walk; Bruno Mars: When I Was Your Man; Ed Sheeran: Perfect; Justin Bieber: Lonely, Off My Face; Billie Eilish: Lovely -->
+          </li>
+          <!-- <br> -->
+          <li>
+            <b>📷 Photography (Sony A7M4)</b><br>
+              <!-- <b>Device:</b> Sony A7M4 + Sony 24-105mm F/4 G OSS + Viltrox 35mm F/1.8; Sony ZV1; DJI Pocket 1; Insta360 GO3; iPhone 14 Pro Max<br> -->
+              <!-- <b>Photography Themes:</b> Landscape, Nature, Flowers, Astrophotography, Portrait; I enjoy pre-composition and color grading during post-processing -->
+          </li>
+          <!-- <br> -->
+          <li>
+            <b>🎥 Movies</b><br>
+              <!-- <b>Favourite Movies:</b> Interstellar, The Blind Side, Heidi, The Shawshank Redemption, Intouchables, The Pursuit of Happyness, The Bourne Ultimatum, The Martian, Harry Potter, Batman/Spider-Man<br> -->
+              <!-- <b>Favourite TV Dramas:</b> Breaking Bad, Stranger Things, Prison Break -->
+          </li>
+          <!-- <br> -->
+          <li>
+            <b>💻 Apple</b><br>
+              <!-- <b>Apple:</b> iPhone 14 Pro Max, MacBook Air(M1), MacBook Pro(2017), iPad Air 3, Apple Watch Series 7, Apple Magic Keyboard with Numeric Keypad, Apple Touch Pad, Airtag<br> -->
+              <!-- <b>Other Device:</b> Sony WH-1000XM5, Logitech G913 TKL(White), Logitech MX Master 3, Lenovo Legion Y7000 -->
+          </li>
+          <li>
+            <b>🚀 SpaceX</b><br>
+          </li>
+          
+          <!-- <br> -->
+          <!-- <li><b>🎾 Tennis / 🥏 Frisbee / 👣 Hiking / 💪 Working Out / .🚗 Travelling</b></li> -->
+          <!-- <br> -->
+          <!-- <li>
+            <b>🧠 Thinking</b><br>
+               I always spend a lot of time thinking about many things/questions. Like: <br>
+               1. Is there a god? <br>
+               2. Is there any other life in the cosmos? <br>
+               3. What's the meaning of my life? <br>
+               4. What should I do to make my life be my life? <br>
+               5. I love to imagine my future life which will raise me up.
+          </li> -->
+          <!-- <br> -->
+          <!-- <li><b>🧍 Person Who I Admire: <span style="color: red;">My Mom, Kaká, Elon Musk, Kanye West, David Tao, Zhi (Leo) Wang</span></b></li> -->
+        </ul>
+      </section>
+    
+      <section class="content">
+        <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 800px; height: 400px;">
+            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=YjVNBwxJI26Tr-MdTFSNvI8uOKdPthOM9nyaHfB5Dks'></script>
+          </div>
+        </div>
+      </section>
+    </div>
 
-        <table width="60%" align="center" border="0" cellspacing="0" cellpadding="20">
-                        <tbody>
-                            <tr>
-                                <td style="padding:0px">
-                                    <br>
-                                    <br>
-                                    <div>
-                                        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=YjVNBwxJI26Tr-MdTFSNvI8uOKdPthOM9nyaHfB5Dks'></script>
-                                        <!-- <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=080808&w=350&t=tt&d=Biz007_Pw8FVsAWycLRoKM_5XR_da9ccb8qGNbWVwnk&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080"></script> -->
-                                        <!-- <a target="_top" href="http://clustrmaps.com/site/1acpn?utm_source=widget&amp;utm_campaign=widget_ctr" id="clustrmaps-widget-v2" class="clustrmaps-map-control" style="width: 300px;">
- -->                               </div>
-                                </td>
-                            </tr>
-                        </tbody>
-        </table>
+   
+    
 
+  </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px">
-                <p font-size:small;="">
-                    <br>
-                    <br>
-                    </p><div style="float:left;">
-                        Updated at Apr 20, 2024
-                    </div>
-                    <div style="float:right;">
-                        Thanks <a href="https://jonbarron.info">Jon Barron</a> for this amazing template
-                    </div>
-                    <br>
-                    <br>        
-                <p></p>                           
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+  <footer>
+    <div class="container">
+      <p>Updated at Apr 20, 2024 | Thanks <a href="https://jonbarron.info">Jon Barron</a> for this amazing template</p>
+    </div>
+  </footer>
 </body>
-
 </html>
+
+
+
