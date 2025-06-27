@@ -29,7 +29,7 @@
     }
 
     .container {
-      width: 75%;
+      width: 75%;git push -u origin master
       margin: auto;
       overflow: hidden;
     }
@@ -158,12 +158,15 @@
         <div class="profile-info">
           <img style="width: 100%; max-width: 500px;" alt="profile photo" src="images/Zhi-Wang-1.jpg" class="hoverZoomLink">
           <span style="font-size: 30px; font-weight: bold;">Zhi (Leo) Wang </span> 
-          <!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftx-leo.github.io&count_bg=%2365A4DD&title_bg=%23B8B6B6&icon=spacex.svg&icon_color=%23000000&title=click&edge_flat=false" /></a> -->
-          <a href="https://hitscounter.dev/"><img src="https://hitscounter.dev/api/hit?url=tx-leo.github.io&label=MIA+SAN+MIA&icon=robot&color=%23e35d6a&message=&style=flat&tz=UTC" /></a>
+          
+          <!-- 用一个div把计数器包起来并设置文本居中 -->
+          <div style="text-align: center; margin: 15px 0;"> 
+            <a href="https://hitscounter.dev/"><img src="https://hitscounter.dev/api/hit?url=tx-leo.github.io&label=MIA+SAN+MIA&icon=robot&color=%23e35d6a&message=&style=flat&tz=UTC" /></a>
+          </div>
+          
           <a href="https://www.wolai.com/tx-leo/hihtxzijGdrNTYCYeUJbew"><b>📷 Check Out My Photography Gallery</b></a>
           Email: tx.leo.wz@gmail.com
         </div>
-      </div>
     </section>
 
     <section class="content">
@@ -205,64 +208,54 @@
 
     <section class="content">
         <heading><b>Publications</b></heading>
-        <div style="display: flex; align-items: center;">
-            <div style="flex: 1;">
-                <img src="images/DoorBot_compact_speedup_compressed.gif" width="480" height="270">
-            </div>
-            <div style="flex: 1.5;">
-                <a href="https://tx-leo.github.io/DoorBot">
-                    <papertitle><b>DoorBot: Closed-Loop Task Planning and Manipulation for Door Opening in the Wild with Haptic Feedback</b></papertitle>
-                </a>
-            <br>
-            <b>Zhi Wang*</b>, Yuchen Mo*, Shengmiao Jin, Wenzhen Yuan
-            <br>
-            <span style="color: red;">IEEE International Conference on Robotics and Automation (ICRA), 2025</span>
-            <br>
-            <a href="https://tx-leo.github.io/DoorBot"><b>Website</b></a>
-            / 
-           <a href="https://arxiv.org/pdf/2504.09358"><b>Paper</b></a>
-            / 
-           <a href="https://youtu.be/_7GVSsXtLFg"><b>Video</b></a>
-            / 
-            <a href="https://github.com/TX-Leo/DoorBot"><b>Code</b></a>
-            /
-            <a href="https://siebelschool.illinois.edu/news/doorbot"><b>UIUC Summary</b></a>
-            /
-            <a href="https://www.wolai.com/tx-leo/bUWZ27ZM9QdjWSpaEVEWpQ"><b>Dataset</b></a>
-
-            <br>
-            <font color='gray'>Proposed DoorBot, a haptic-aware closed-loop hierarchical control framework that enables robots to explore and open different unseen doors in the wild. We test our system on 20 unseen doors across different buildings, featuring diverse appearances and mechanical types. Our framework achieves a 90% success rate, demonstrating its ability to generalize and robustly handle varied door-opening tasks.</font>
-            </div>
-        </div>
+        <div class="publication-item">
+          <div class="image-container">
+              <img src="images/DoorBot_compact_speedup_compressed.gif" alt="DoorBot animation">
+          </div>
+          <div class="text-container">
+              <a href="https://tx-leo.github.io/DoorBot">
+                  <papertitle><b>DoorBot: Closed-Loop Task Planning and Manipulation for Door Opening in the Wild with Haptic Feedback</b></papertitle>
+              </a>
+              <br>
+              <b>Zhi Wang*</b>, Yuchen Mo*, Shengmiao Jin, Wenzhen Yuan
+              <br>
+              <span style="color: red;">IEEE International Conference on Robotics and Automation (ICRA), 2025</span>
+              <br>
+              <a href="https://tx-leo.github.io/DoorBot"><b>Website</b></a> / 
+              <a href="https://arxiv.org/pdf/2504.09358"><b>Paper</b></a> / 
+              <a href="https://youtu.be/_7GVSsXtLFg"><b>Video</b></a> / 
+              <a href="https://github.com/TX-Leo/DoorBot"><b>Code</b></a> /
+              <a href="https://siebelschool.illinois.edu/news/doorbot"><b>UIUC Summary</b></a> /
+              <a href="https://www.wolai.com/tx-leo/bUWZ27ZM9QdjWSpaEVEWpQ"><b>Dataset</b></a>
+              <br>
+              <font color='gray'>Proposed DoorBot, a haptic-aware closed-loop hierarchical control framework that enables robots to explore and open different unseen doors in the wild. We test our system on 20 unseen doors across different buildings, featuring diverse appearances and mechanical types. Our framework achieves a 90% success rate, demonstrating its ability to generalize and robustly handle varied door-opening tasks.</font>
+          </div>
+      </div>
         
         <br>
         <br>
 
-        <div style="display: flex; align-items: center;">
-          <div style="flex: 1;">
-            <img src="images/kosmos-e.png" width="480" height="270">
+        <div class="publication-item">
+          <div class="image-container">
+              <img src="images/kosmos-e.png" alt="KOSMOS-E diagram">
           </div>
-          <div style="flex: 1.5;">
-            <a href="https://tx-leo.github.io/KOSMOS-E">
-              <papertitle><b>KOSMOS-E: Learning to Follow Instruction for Robotic Grasping</b></papertitle>
-            </a>
-            <br>
-            <b>Zhi Wang*</b>, Xun Wu*, Shaohan Huang, Li Dong, Wenhui Wang, Shuming Ma, Furu Wei
-            <br>
-            <span style="color: red;">IEEE International Conference on Intelligent Robots and System (IROS), 2024, Oral Pitch</span>
-            <br>
-            <a href="https://tx-leo.github.io/KOSMOS-E"><b>Website</b></a>
-             / 
-            <a href="data/IROS2024_KOSMOS-E.pdf"><b>Paper</b></a>
-             / 
-            <a href="https://youtu.be/ZUHpsCZ5nXc"><b>Video</b></a>
-             / 
-             <a href="https://github.com/TX-Leo/KOSMOS-E"><b>Code</b></a>
-             /
-            <br>
-            <font color='gray'>Proposed KOSMOS-E, a Multimodal Large Language Model (MLLM) that leverages instruction-following robotic grasping data to enhance capabilities for precise and intricate robotic grasping maneuvers.</font>
+          <div class="text-container">
+              <a href="https://tx-leo.github.io/KOSMOS-E">
+                  <papertitle><b>KOSMOS-E: Learning to Follow Instruction for Robotic Grasping</b></papertitle>
+              </a>
+              <br>
+              <b>Zhi Wang*</b>, Xun Wu*, Shaohan Huang, Li Dong, Wenhui Wang, Shuming Ma, Furu Wei
+              <br>
+              <span style="color: red;">IEEE International Conference on Intelligent Robots and System (IROS), 2024, Oral Pitch</span>
+              <br>
+              <a href="https://tx-leo.github.io/KOSMOS-E"><b>Website</b></a> / 
+              <a href="data/IROS2024_KOSMOS-E.pdf"><b>Paper</b></a> / 
+              <a href="https://youtu.be/ZUHpsCZ5nXc"><b>Video</b></a> / 
+              <a href="https://github.com/TX-Leo/KOSMOS-E"><b>Code</b></a> /
+              <br>
+              <font color='gray'>Proposed KOSMOS-E, a Multimodal Large Language Model (MLLM) that leverages instruction-following robotic grasping data to enhance capabilities for precise and intricate robotic grasping maneuvers.</font>
           </div>
-        </div>
+      </div>
       </section>
 
     <section class="content">
@@ -470,7 +463,7 @@
 
   <footer>
     <div class="container">
-      <p>Updated at Apr 20, 2024 | Thanks <a href="https://jonbarron.info">Jon Barron</a> for this amazing template</p>
+      <p>Updated at Jun 27, 2025 | Thanks <a href="https://jonbarron.info">Jon Barron</a> for this amazing template</p>
     </div>
   </footer>
 </body>
