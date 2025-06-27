@@ -1,12 +1,4 @@
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
+/* --- 原始字体和基础样式 (来自你的旧CSS) --- */
 @font-face {
   font-family: 'Lato';
   font-style: italic;
@@ -14,31 +6,6 @@
   src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -46,15 +13,6 @@
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -67,21 +25,10 @@ a {
   color: #1772d0;
   text-decoration: none;
 }
-
 a:focus,
 a:hover {
   color: #f09228;
   text-decoration: none;
-}
-
-body,
-td,
-th,
-tr,
-p,
-a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 16px
 }
 
 strong {
@@ -89,43 +36,228 @@ strong {
   font-size: 16px;
 }
 
-heading {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 24px;
+span.highlight {
+  background-color: #ffffd0;
 }
 
-papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 700
+
+/* --- 整合并优化的样式 (来自你的内联style) --- */
+
+body {
+  font-family: 'Arial', 'Lato', sans-serif; /* 添加Lato作为备用字体 */
+  line-height: 1.6; /* 稍微减小行高，使其更紧凑 */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 16px; /* 设定基础字体大小 */
 }
 
+/* 字体大小使用 rem 单位，更利于缩放 */
 name {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 34px;
+  font-size: 4rem;
+}
+heading {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+papertitle {
+  font-size: 1.2rem; /* 调整大小 */
+  font-weight: 700;
 }
 
-.one {
-  width: 160px;
-  height: 160px;
+.container {
+  width: 85%; /* 使用百分比宽度 */
+  max-width: 1200px; /* 但最大不超过1200px，防止在超大屏幕上过宽 */
+  margin: auto; /* 自动居中 */
+  overflow: hidden;
+}
+
+.header {
+  background-image: url('images/nvidia-robotics-0.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 10rem 0; /* 稍微减小padding */
   position: relative;
 }
 
-.two {
-  width: 160px;
-  height: 160px;
+.page-title {
+  color: #ffffff; 
+  font-size: 1.6rem; 
+  margin-bottom: 0;
   position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+  bottom: 20px; /* 调整距离 */
+  left: 50%;
+  width: 90%; /* 防止在小屏上换行时超出边界 */
+  transform: translateX(-50%);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* 添加一点文字阴影增强可读性 */
 }
 
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+.content {
+  padding: 25px;
+  background: #fff;
+  margin: 20px 0; /* 修改了边距，上下20px，左右0 */
+  border-bottom: #35424a 3px solid;
 }
 
-span.highlight {
-  background-color: #ffffd0;
+.content:last-child {
+  border-bottom: none; /* 最后一个content部分不需要底边框 */
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin: 0px 0px 18px;
+  font-size: 18px;
+}
+
+/* 简介部分的Flex布局 */
+.intro .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 垂直居中对齐 */
+  flex-wrap: wrap; /* 允许换行，为响应式做准备 */
+}
+
+.intro-text {
+  flex: 1.8;
+  margin-right: 20px;
+}
+
+.profile-info {
+  flex: 1;
+  text-align: center; 
+}
+
+.profile-info a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* 经历部分的Flex布局 */
+.experience-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.experience-item img {
+  margin-right: 40px;
+}
+
+/* 论文部分的Flex布局 (这是一个通用的左右图文布局) */
+.publication-item {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 2rem;
+    gap: 30px; /* 使用gap来创建间距 */
+}
+
+.publication-item .image-container {
+    flex: 1;
+}
+
+.publication-item .text-container {
+    flex: 1.5;
+}
+
+/* 确保所有图片都能响应式缩放 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 解决图片底部空隙问题 */
+}
+
+/* 地图容器 */
+.map-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.map-container div {
+  max-width: 100%; /* 确保地图容器不会超出父元素 */
+  margin: 0 auto;
+}
+
+footer {
+  background: #35424a;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   响应式设计 - Media Queries
+   当屏幕宽度小于或等于 768px 时，应用以下样式
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%; /* 在小屏幕上，内容区域更宽 */
+  }
+
+  .header {
+    padding: 6rem 0; /* 减小头部区域的高度 */
+  }
+
+  .page-title {
+    font-size: 1.2rem; /* 减小标题字体 */
+  }
+
+  name {
+    font-size: 3rem; /* 减小姓名大小 */
+  }
+  
+  heading {
+    font-size: 1.8rem; /* 减小章节标题大小 */
+  }
+
+  /* --- 关键：将Flex布局改为垂直堆叠 --- */
+
+  .intro .container,
+  .publication-item,
+  .experience-item {
+    flex-direction: column; /* 将flex子项垂直排列 */
+    text-align: center; /* 内容居中显示 */
+  }
+  
+  /* 调整垂直堆叠后的间距 */
+  .intro-text {
+    margin-right: 0;
+    margin-bottom: 30px; /* 在文本和图片之间添加间距 */
+    text-align: left; /* 文本部分还是左对齐好看 */
+  }
+  
+  .publication-item .image-container {
+      margin-bottom: 20px; /* 在图片和文字之间添加间距 */
+  }
+
+  .experience-item {
+    text-align: left; /* 经历部分也保持左对齐 */
+  }
+  
+  .experience-item img {
+    margin-right: 0;
+    margin-bottom: 15px; /* logo和文字之间的间距 */
+  }
+  
+  /* 修复你的HTML中论文图片写死的宽度问题 */
+  /* 虽然我们推荐用class，但这个选择器也能生效 */
+  .publication-item img[width="480"] {
+      width: 100%; /* 覆盖行内样式，使其自适应 */
+      height: auto;
+  }
+  
+  .content p {
+      font-size: 16px; /* 在小屏幕上稍微缩小段落字体 */
+  }
+
+  /* 调整领导力部分的右浮动日期 */
+  .leadership-item h3 .location {
+    display: block; /* 让日期换行显示 */
+    float: none; /* 取消浮动 */
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
 }
