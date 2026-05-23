@@ -166,7 +166,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block; /* 解决图片底部空隙问题 */
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 /* 地图容器 */
