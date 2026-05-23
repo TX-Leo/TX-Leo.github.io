@@ -144,6 +144,7 @@ papertitle {
 
 .experience-item img {
   margin-right: 40px;
+  border-radius: 0;
 }
 
 /* 论文部分的Flex布局 (这是一个通用的左右图文布局) */
@@ -279,6 +280,7 @@ footer {
     max-width: 150px;          /* 防止某些 logo 过宽 */
     object-fit: contain;       /* 确保 logo 完整显示，不被拉伸或裁剪 */
     transition: transform 0.3s ease; /*为鼠标悬停效果添加平滑过渡*/
+    border-radius: 0;
 }
 
 .logo-gallery img:hover {
