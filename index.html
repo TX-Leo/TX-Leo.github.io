@@ -12,8 +12,13 @@
   <style>
     /* Publication link icons + GitHub star badge */
     .text-container a i { margin-right: 3px; }
-    .github-stars { vertical-align: text-bottom; }
-    .github-stars img { height: 20px; vertical-align: middle; }
+    .github-stars { margin: 0 4px; }
+    /* override global img{display:block;border-radius:12px} so the badge stays an inline pill */
+    .github-stars img { display: inline-block; height: 18px; width: auto; vertical-align: middle; border-radius: 3px; }
+    /* Author names: black text instead of blue links; own name bold + darker + underlined */
+    .authors a { color: #333; font-weight: 400; text-decoration: none; }
+    .authors a:hover { color: #f09228; }
+    .authors a.me { color: #000; font-weight: 700; text-decoration: underline; }
   </style>
   <!-- <style>
     body {
@@ -245,16 +250,15 @@
                   <papertitle><b>Human<span style="color:#C45A0E">Ego</span>: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</b></papertitle>
               </a>
               <br>
-              <a href="https://tx-leo.github.io/"><b><u>Zhi Wang</u></b></a>, <a href="https://bottle101.github.io/">Botao He</a>, <a href="https://colinyu1.github.io/">Kelin Yu</a>, <a href="https://sjlee.cc/">Seungjae Lee</a>, <a href="https://ruohangao.github.io/">Ruohan Gao</a>, <a href="https://furong-huang.com/">Furong Huang</a>, <a href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos">Yiannis Aloimonos</a>
+              <span class="authors"><a class="me" href="https://tx-leo.github.io/">Zhi Wang</a>, <a href="https://bottle101.github.io/">Botao He</a>, <a href="https://colinyu1.github.io/">Kelin Yu</a>, <a href="https://sjlee.cc/">Seungjae Lee</a>, <a href="https://ruohangao.github.io/">Ruohan Gao</a>, <a href="https://furong-huang.com/">Furong Huang</a>, <a href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos">Yiannis Aloimonos</a></span>
               <br>
               <a href="https://humanego-ai.github.io/"><i class="fa-solid fa-globe"></i><b>Website</b></a> /
               <a href="https://arxiv.org/pdf/2605.24934"><i class="fa-solid fa-file-pdf"></i><b>Paper</b></a> /
               <a href="https://arxiv.org/abs/2605.24934"><i class="ai ai-arxiv"></i><b>arXiv</b></a> /
               <a href="https://www.youtube.com/watch?v=pdL46diijuY"><i class="fa-brands fa-youtube"></i><b>Video</b></a> /
-              <a href="https://github.com/TX-Leo/HumanEgo"><i class="fa-brands fa-github"></i><b>Code</b></a> /
+              <a href="https://github.com/TX-Leo/HumanEgo"><i class="fa-brands fa-github"></i><b>Code</b></a><a class="github-stars" href="https://github.com/TX-Leo/HumanEgo/stargazers"><img src="https://img.shields.io/github/stars/TX-Leo/HumanEgo?style=social" alt="GitHub stars"></a> /
               <a href="https://huggingface.co/datasets/Leo-TX/HumanEgo"><i class="fa-solid fa-database"></i><b>Dataset</b></a> /
               <a href="https://huggingface.co/spaces/Leo-TX/humanego-gallery"><i class="fa-solid fa-images"></i><b>Data Gallery</b></a>
-              <a class="github-stars" href="https://github.com/TX-Leo/HumanEgo/stargazers"><img src="https://img.shields.io/github/stars/TX-Leo/HumanEgo?style=social" alt="GitHub stars"></a>
               <br>
               <font color='gray'>We introduce HumanEgo, a robot-data-free, hardware-agnostic, and data-efficient pipeline that learns robot manipulation policies from minutes of raw human egocentric videos—powered by a flow matching policy with dense auxiliary objectives.</font>
           </div>
