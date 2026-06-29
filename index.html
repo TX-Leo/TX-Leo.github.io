@@ -22,6 +22,8 @@
     .authors a { color: #333; font-weight: 400; text-decoration: none; }
     .authors a:hover { color: #f09228; }
     .authors a.me { color: #000; font-weight: 700; text-decoration: underline; }
+    /* Inline logo before a publication title (override global img{display:block;border-radius:12px}) */
+    .pub-title-logo { display: inline-block; height: 1.4em; width: auto; vertical-align: middle; border-radius: 0; margin-right: 8px; }
   </style>
   <!-- <style>
     body {
@@ -251,7 +253,7 @@
           </div>
           <div class="text-container">
               <a href="https://humanego-ai.github.io/">
-                  <papertitle><b>Human<span style="color:#C45A0E">Ego</span>: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</b></papertitle>
+                  <papertitle><b><img class="pub-title-logo" src="images/humanego_logo.png" alt="HumanEgo logo">Human<span style="color:#C45A0E">Ego</span>: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</b></papertitle>
               </a>
               <br>
               <span class="authors"><a class="me" href="https://tx-leo.github.io/">Zhi Wang</a>, <a href="https://bottle101.github.io/">Botao He</a>, <a href="https://colinyu1.github.io/">Kelin Yu</a>, <a href="https://sjlee.cc/">Seungjae Lee</a>, <a href="https://ruohangao.github.io/">Ruohan Gao</a>, <a href="https://furong-huang.com/">Furong Huang</a>, <a href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos">Yiannis Aloimonos</a></span>
