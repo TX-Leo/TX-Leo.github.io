@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 186">
+  <g fill="#141414">
+    <!-- arms -->
+    <g fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 58 L30 71 L30 103"/>
+      <path d="M90 58 L110 71 L110 103"/>
+    </g>
+    <!-- left gripper -->
+    <rect x="23.5" y="100" width="13" height="5" rx="1.5"/>
+    <rect x="25" y="104" width="3.2" height="12" rx="1.4"/>
+    <rect x="31.8" y="104" width="3.2" height="12" rx="1.4"/>
+    <!-- right gripper -->
+    <rect x="103.5" y="100" width="13" height="5" rx="1.5"/>
+    <rect x="105" y="104" width="3.2" height="12" rx="1.4"/>
+    <rect x="111.8" y="104" width="3.2" height="12" rx="1.4"/>
+    <!-- head -->
+    <rect x="45" y="5" width="50" height="27" rx="13.5"/>
+    <!-- neck -->
+    <rect x="63" y="30" width="14" height="9"/>
+    <!-- torso -->
+    <path d="M44 55 C44 44 54 39 70 39 C86 39 96 44 96 55 L82 150 L58 150 Z"/>
+    <!-- mobile base -->
+    <ellipse cx="70" cy="150" rx="31" ry="7.5"/>
+    <rect x="39" y="150" width="62" height="27" rx="7"/>
+    <ellipse cx="70" cy="177" rx="31" ry="7.5"/>
+  </g>
+  <!-- head cameras -->
+  <circle cx="61" cy="18.5" r="3.6" fill="#fff"/>
+  <circle cx="79" cy="18.5" r="3.6" fill="#fff"/>
+  <!-- base light strip -->
+  <rect x="48" y="166" width="44" height="3.4" rx="1.7" fill="#fff"/>
+</svg>
