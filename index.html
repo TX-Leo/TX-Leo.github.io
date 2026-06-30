@@ -191,7 +191,28 @@
           <span style="font-size:15px; font-weight: bold;">Research Intern@Amazon FAR </span>
           <br>
           Email: tx.leo.wz@gmail.com
-          <!-- <div style="text-align: center; margin: 15px 0;"> 
+          <div class="view-counter" id="view-counter" style="margin-top: 0.6em; font-size: 0.9em; color: #888; visibility: hidden;">
+            <i class="fa-regular fa-eye" style="opacity: 0.75;"></i>
+            <span id="view-count">—</span> views
+          </div>
+          <script>
+            (function () {
+              var wrap = document.getElementById('view-counter');
+              var out  = document.getElementById('view-count');
+              if (!wrap || !out) return;
+              var BASE = 30000; // start the displayed count from ~30,000
+              fetch('https://api.counterapi.dev/v1/tx-leo-github-io/views/up', { cache: 'no-store' })
+                .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+                .then(function (d) {
+                  var n = d && (d.count != null ? d.count : d.value);
+                  if (typeof n !== 'number') throw new Error('bad payload');
+                  out.textContent = (BASE + n).toLocaleString();
+                  wrap.style.visibility = 'visible';
+                })
+                .catch(function () { /* leave hidden if the service is unreachable */ });
+            })();
+          </script>
+          <!-- <div style="text-align: center; margin: 15px 0;">
             <a href="https://hitscounter.dev/"><img src="https://hitscounter.dev/api/hit?url=tx-leo.github.io&label=MIA+SAN+MIA&icon=robot&color=%23e35d6a&message=&style=flat&tz=UTC" /></a>
           </div> -->
           
