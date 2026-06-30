@@ -200,7 +200,7 @@
               var wrap = document.getElementById('view-counter');
               var out  = document.getElementById('view-count');
               if (!wrap || !out) return;
-              var BASE = 30000; // start the displayed count from ~30,000
+              var BASE = 100000; // start the displayed count from ~100,000
               fetch('https://api.counterapi.dev/v1/tx-leo-github-io/views/up', { cache: 'no-store' })
                 .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
                 .then(function (d) {
