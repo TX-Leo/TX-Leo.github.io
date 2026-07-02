@@ -286,3 +286,42 @@ footer {
 .logo-gallery img:hover {
     transform: scale(1.3);     /* 鼠标悬停时，logo 稍微放大 */
 }
+
+/* --- Photography teaser (filmstrip + CTA) --- */
+.photo-strip {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 8px 0 24px;
+}
+.photo-strip a { display: block; flex: 0 0 auto; line-height: 0; }
+.photo-strip img {
+    height: 170px;
+    width: auto;
+    max-width: none;           /* override global img{max-width:100%} for a filmstrip */
+    border-radius: 8px;
+    object-fit: cover;
+    filter: saturate(.98) brightness(.97);
+    transition: transform .3s ease, filter .3s ease;
+}
+.photo-strip a:hover img { transform: scale(1.04); filter: saturate(1.06) brightness(1.03); }
+
+.photo-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #35424a;
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background .25s ease, transform .25s ease;
+}
+.photo-cta:hover { background: #f09228; color: #fff !important; transform: translateY(-1px); }
+.photo-cta .arrow { transition: transform .25s ease; }
+.photo-cta:hover .arrow { transform: translateX(4px); }
+
+@media (max-width: 768px) {
+    .photo-strip img { height: 120px; }
+}
