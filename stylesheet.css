@@ -396,3 +396,26 @@ footer {
     .pf-tile { opacity: 1 !important; transform: none !important; transition: none; }
     .pf-tile img, .pf-shuffle-icon { transition: none; }
 }
+
+/* --- Collapsible MISC entries (Cities / Concerts) --- */
+.misc-details > summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+}
+.misc-details > summary::-webkit-details-marker { display: none; }
+.misc-details > summary::before {
+    content: "\25B8";              /* ▸ */
+    display: inline-block;
+    width: 1em; margin-right: 4px;
+    color: #1772d0;
+    transition: transform .2s ease;
+}
+.misc-details[open] > summary::before { transform: rotate(90deg); }
+.misc-details > summary:hover { color: #f09228; }
+.misc-count { font-weight: 400; color: #777; margin-left: 2px; }
+.misc-body {
+    margin-top: 10px;
+    padding-left: 1.4em;
+    border-left: 2px solid #eee;
+}
