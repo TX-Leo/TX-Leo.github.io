@@ -12,6 +12,10 @@
   <!-- Icon libraries for publication links -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <!-- Editorial serif for the Photography feature -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     /* Publication link icons + GitHub star badge */
     .text-container a i { margin-right: 3px; }
@@ -510,19 +514,17 @@
         </ul>
       </section> -->
     
-      <section class="content">
-        <heading><b>📷 Photography</b></heading>
-        <p style="margin-top: 14px;">
-          Beyond robotics, I chase light with a camera — cities, architecture, night skies, and quiet moments.
-          My work lives in a self-built monograph: <b>129 photographs</b> across <b>17 series</b>, shot on a <b>Sony A7 IV</b>.
-        </p>
-        <div class="photo-strip">
-          <a href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener" title="City — Hong Kong"><img src="https://tx-leo.github.io/photography/gallery/city/thumb/hong-kong.jpg" alt="Hong Kong at night" loading="lazy"></a>
-          <a href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener" title="Astronomical Phenomena — Galaxy"><img src="https://tx-leo.github.io/photography/gallery/astronomical-phenomena/thumb/galaxy.jpg" alt="The Milky Way over a tent" loading="lazy"></a>
-          <a href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener" title="Architecture — Abu Dhabi"><img src="https://tx-leo.github.io/photography/gallery/architecture/thumb/sheikh-zayed-grand-mosque-abu-dhabi.jpg" alt="Sheikh Zayed Grand Mosque" loading="lazy"></a>
-          <a href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener" title="City — Chicago"><img src="https://tx-leo.github.io/photography/gallery/city/thumb/chicago.jpg" alt="Chicago skyline" loading="lazy"></a>
-          <a href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener" title="Firework — Alexandria, VA"><img src="https://tx-leo.github.io/photography/gallery/firework/thumb/alexandria-va-2025-12-31.jpg" alt="Fireworks over Alexandria" loading="lazy"></a>
+      <section class="content photo-feature">
+        <div class="pf-head">
+          <div class="pf-head-text">
+            <heading class="pf-title"><b>Photography</b></heading>
+            <p class="pf-sub">Cities, architecture, night skies, and quiet moments — a monograph of <b>129 photographs</b> across <b>17 series</b>, shot on a Sony A7 IV. <span class="pf-hint">A fresh selection every visit.</span></p>
+          </div>
+          <button type="button" class="pf-shuffle" id="pf-shuffle" aria-label="Shuffle the photographs">
+            <span class="pf-shuffle-icon" aria-hidden="true">&#10227;</span> Shuffle
+          </button>
         </div>
+        <div class="pf-mosaic" id="pf-mosaic" aria-live="polite"></div>
         <a class="photo-cta" href="https://tx-leo.github.io/photography/" target="_blank" rel="noopener">View the Full Gallery <span class="arrow">&rarr;</span></a>
       </section>
 
@@ -610,6 +612,79 @@
       <p>Updated at Jun 29, 2026 </p>
     </div>
   </footer>
+
+  <!-- Photography feature: random selection from the live gallery manifest -->
+  <script src="https://tx-leo.github.io/photography/data.js"></script>
+  <script>
+  (function () {
+    var BASE = 'https://tx-leo.github.io/photography/';
+    // Fallback pool used only if the gallery manifest fails to load.
+    var FALLBACK = [
+      { t: BASE + 'gallery/city/thumb/hong-kong.jpg', c: 'City', p: 'Hong Kong', cap: 'Hong Kong' },
+      { t: BASE + 'gallery/astronomical-phenomena/thumb/galaxy.jpg', c: 'Astronomical Phenomena', p: '', cap: 'Galaxy' },
+      { t: BASE + 'gallery/architecture/thumb/sheikh-zayed-grand-mosque-abu-dhabi.jpg', c: 'Architecture', p: 'Abu Dhabi', cap: 'Sheikh Zayed Grand Mosque' },
+      { t: BASE + 'gallery/city/thumb/chicago.jpg', c: 'City', p: 'Chicago', cap: 'Chicago' },
+      { t: BASE + 'gallery/firework/thumb/alexandria-va-2025-12-31.jpg', c: 'Firework', p: 'Alexandria, VA', cap: 'Alexandria, VA' },
+      { t: BASE + 'gallery/flower/thumb/lincoln-park-conservatory-chicago-1.jpg', c: 'Flower', p: 'Chicago', cap: 'Lincoln Park Conservatory' }
+    ];
+    function pool() {
+      if (window.GALLERY && window.GALLERY.categories) {
+        var out = [];
+        window.GALLERY.categories.forEach(function (cat) {
+          (cat.photos || []).forEach(function (ph) {
+            out.push({ t: BASE + ph.thumb, c: cat.name, p: ph.place || '', cap: ph.caption || '' });
+          });
+        });
+        if (out.length) return out;
+      }
+      return FALLBACK;
+    }
+    function sample(arr, n) {
+      var a = arr.slice(), r = [];
+      n = Math.min(n, a.length);
+      for (var i = 0; i < n; i++) r.push(a.splice(Math.floor(Math.random() * a.length), 1)[0]);
+      return r;
+    }
+    var mosaic = document.getElementById('pf-mosaic');
+    var btn = document.getElementById('pf-shuffle');
+    if (!mosaic) return;
+    var COUNT = window.innerWidth <= 560 ? 8 : (window.innerWidth <= 900 ? 9 : 12);
+
+    function render() {
+      var chosen = sample(pool(), COUNT);
+      mosaic.innerHTML = '';
+      chosen.forEach(function (ph, i) {
+        var a = document.createElement('a');
+        a.className = 'pf-tile';
+        a.href = BASE; a.target = '_blank'; a.rel = 'noopener';
+        a.title = ph.c + (ph.p ? ' — ' + ph.p : '');
+
+        var img = document.createElement('img');
+        img.src = ph.t; img.loading = 'lazy'; img.decoding = 'async';
+        img.alt = (ph.cap || ph.c) + (ph.p ? ', ' + ph.p : '');
+        a.appendChild(img);
+
+        var cap = document.createElement('span'); cap.className = 'pf-cap';
+        var t = document.createElement('span'); t.className = 'pf-cap-t';
+        t.textContent = ph.cap || ph.c; cap.appendChild(t);
+        var sub = document.createElement('span'); sub.className = 'pf-cap-p';
+        var showPlace = ph.p && ph.cap.toLowerCase().indexOf(ph.p.toLowerCase()) < 0;
+        sub.textContent = ph.c + (showPlace ? ' · ' + ph.p : '');
+        cap.appendChild(sub);
+        a.appendChild(cap);
+
+        mosaic.appendChild(a);
+        (function (el, idx) { setTimeout(function () { el.classList.add('in'); }, 50 + idx * 45); })(a, i);
+      });
+    }
+    if (btn) btn.addEventListener('click', function () {
+      btn.classList.add('spin');
+      setTimeout(function () { btn.classList.remove('spin'); }, 650);
+      render();
+    });
+    render();
+  })();
+  </script>
 </body>
 </html>
 
