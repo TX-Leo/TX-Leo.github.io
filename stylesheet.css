@@ -419,3 +419,59 @@ footer {
     padding-left: 1.4em;
     border-left: 2px solid #eee;
 }
+
+/* --- Photography badge (profile) --- */
+.photo-badge-wrap { margin: 14px 0 4px; line-height: 1; }
+.profile-info a.photo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    padding: 9px 20px 9px 15px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2c353c 0%, #3d4b54 100%);
+    border: 1px solid rgba(200, 169, 120, 0.45);
+    color: #ecdfc6 !important;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.015em;
+    text-decoration: none !important;
+    box-shadow: 0 7px 20px rgba(20, 26, 30, 0.24),
+                0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    transition: transform .28s cubic-bezier(.2,.7,.2,1),
+                box-shadow .28s ease, border-color .28s ease, color .28s ease;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+.photo-badge__icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 27px; height: 27px; flex: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d8ba8a 0%, #a9884f 100%);
+    color: #1c1710; font-size: 13px;
+    box-shadow: 0 2px 7px rgba(168, 133, 74, 0.45);
+}
+.photo-badge__text { line-height: 1; white-space: nowrap; }
+.photo-badge__arrow { color: #c8a978; font-weight: 700; transition: transform .28s ease; }
+.profile-info a.photo-badge:hover {
+    transform: translateY(-2px);
+    border-color: rgba(200, 169, 120, 0.85);
+    color: #ffffff !important;
+    box-shadow: 0 13px 28px rgba(20, 26, 30, 0.34),
+                0 0 0 1px rgba(200, 169, 120, 0.28),
+                0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+.profile-info a.photo-badge:hover .photo-badge__arrow { transform: translateX(4px); }
+/* soft shine sweep on hover */
+.photo-badge::before {
+    content: ""; position: absolute; top: 0; left: -60%;
+    width: 45%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.20), transparent);
+    transform: skewX(-18deg); transition: left .65s ease; pointer-events: none;
+}
+.profile-info a.photo-badge:hover::before { left: 135%; }
+@media (prefers-reduced-motion: reduce) {
+    .profile-info a.photo-badge,
+    .photo-badge__arrow, .photo-badge::before { transition: none; }
+}
