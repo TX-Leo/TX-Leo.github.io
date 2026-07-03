@@ -452,7 +452,13 @@ footer {
     color: #1c1710; font-size: 13px;
     box-shadow: 0 2px 7px rgba(168, 133, 74, 0.45);
 }
-.photo-badge__text { line-height: 1; white-space: nowrap; }
+.photo-badge__text { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1; }
+.photo-badge__title { line-height: 1; white-space: nowrap; }
+.photo-badge__sub {
+    font-size: 11px; font-weight: 600; line-height: 1;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: #c8a978; opacity: 0.88; white-space: nowrap;
+}
 .photo-badge__arrow { color: #c8a978; font-weight: 700; transition: transform .28s ease; }
 .profile-info a.photo-badge:hover {
     transform: translateY(-2px);
