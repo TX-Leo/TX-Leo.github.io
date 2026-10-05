@@ -486,7 +486,8 @@ footer {
    A metallic gold capsule for each best-paper award. Rendered as links so a
    reader can click through to the workshop. Uppercase + tight letterspacing
    keeps them reading as credentials rather than buttons. */
-.award-bars { margin: 0.55em 0 0.1em; line-height: 1; }
+.award-bars,
+.venue-bars { margin: 0.55em 0 0.1em; line-height: 1; }
 .award-bar {
   display: inline-flex;
   align-items: center;
@@ -513,4 +514,32 @@ footer {
 }
 @media (max-width: 560px) {
   .award-bar { font-size: 0.66rem; padding: 0.4em 0.7em; letter-spacing: 0.04em; }
+}
+
+/* Quieter sibling of .award-bar: the venue a paper appeared in. Same geometry
+   so the two read as one family, but neutral grey, no icon, and normal case —
+   venue names are long and all-caps would wrap badly. */
+.venue-bar {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42em 0.95em;
+  margin: 0 0.42em 0.42em 0;
+  border-radius: 6px;
+  font-size: 0.80rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-decoration: none !important;
+  color: #4A4A4A !important;
+  background: linear-gradient(180deg, #F7F7F7 0%, #ECECEC 100%);
+  border: 1px solid #D9D9D9;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+.venue-bar:hover {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 100%);
+  border-color: #C4C4C4;
+  color: #1F1F1F !important;
+}
+@media (max-width: 560px) {
+  .venue-bar { font-size: 0.72rem; padding: 0.4em 0.7em; }
 }
