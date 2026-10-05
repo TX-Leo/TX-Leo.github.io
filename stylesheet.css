@@ -481,3 +481,36 @@ footer {
     .profile-info a.photo-badge,
     .photo-badge__arrow, .photo-badge::before { transition: none; }
 }
+
+/* ---- Award bars on a publication entry ----
+   A metallic gold capsule for each best-paper award. Rendered as links so a
+   reader can click through to the workshop. Uppercase + tight letterspacing
+   keeps them reading as credentials rather than buttons. */
+.award-bars { margin: 0.55em 0 0.1em; line-height: 1; }
+.award-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.42em 0.95em;
+  margin: 0 0.42em 0.42em 0;
+  border-radius: 6px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: #3B2C06 !important;
+  background: linear-gradient(100deg, #C9A33D 0%, #E4C972 34%, #F6EBBF 50%, #E4C972 66%, #C9A33D 100%);
+  border: 1px solid #B2902E;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 2px rgba(90, 70, 15, 0.18);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+.award-bar i { font-size: 0.92em; opacity: 0.85; }
+.award-bar:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 3px 8px rgba(90, 70, 15, 0.26);
+}
+@media (max-width: 560px) {
+  .award-bar { font-size: 0.66rem; padding: 0.4em 0.7em; letter-spacing: 0.04em; }
+}
