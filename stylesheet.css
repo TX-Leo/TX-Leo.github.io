@@ -543,3 +543,37 @@ footer {
 @media (max-width: 560px) {
   .venue-bar { font-size: 0.72rem; padding: 0.4em 0.7em; }
 }
+
+/* --- MISC: compact emoji row + collapsible details --- */
+.misc-emojis {
+    font-size: 26px;
+    line-height: 1.6;
+    margin: 6px 0 14px;
+    letter-spacing: 1px;
+}
+.misc-emojis span[title] { cursor: default; }
+.misc-sep { color: #c8c8c8; margin: 0 6px; font-size: 20px; }
+.misc-more > summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px 16px;
+    border: 1px solid rgba(196, 90, 14, 0.35);
+    border-radius: 999px;
+    background: rgba(196, 90, 14, 0.06);
+    color: #C45A0E;
+    font-weight: 600;
+    font-size: 15px;
+    user-select: none;
+    transition: background .15s ease, border-color .15s ease;
+}
+.misc-more > summary::-webkit-details-marker { display: none; }
+.misc-more > summary:hover { background: rgba(196, 90, 14, 0.12); border-color: rgba(196, 90, 14, 0.55); }
+.misc-more .when-open { display: none; }
+.misc-more[open] .when-open { display: inline; }
+.misc-more[open] .when-closed { display: none; }
+.misc-chevron { display: inline-block; transition: transform .2s ease; font-size: 12px; }
+.misc-more[open] .misc-chevron { transform: rotate(180deg); }
+.misc-more > ul { margin-top: 14px; }
