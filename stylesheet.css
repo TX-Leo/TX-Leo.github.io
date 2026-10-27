@@ -284,7 +284,7 @@ footer {
     max-width: 150px;          /* 防止某些 logo 过宽 */
     object-fit: contain;       /* 确保 logo 完整显示，不被拉伸或裁剪 */
     transition: transform 0.3s ease; /*为鼠标悬停效果添加平滑过渡*/
-    border-radius: 0;
+    border-radius: 12px;       /* rounded logos, same look as the Experiences logos */
 }
 
 .logo-gallery img:hover {
@@ -347,7 +347,7 @@ footer {
 @media (max-width: 560px) { .pf-mosaic, .pf-row { gap: 8px; } }
 
 .pf-tile {
-    flex: 1 1 0; min-width: 0;
+    flex: 1 1 0; min-width: 0; min-height: 0;
     position: relative; display: block; line-height: 0;
     overflow: hidden; border-radius: 8px; background: #17171b;
     opacity: 0; transform: translateY(16px) scale(.985);

@@ -786,38 +786,52 @@
     var btn = document.getElementById('pf-shuffle');
     if (!mosaic) return;
 
-    // Target row height, number of rows, and gap for the current width.
+    // Alternating justified rows: landscape rows and portrait rows take turns.
+    // Portrait rows are ~1.5x taller, so a portrait and a landscape get about
+    // the same on-screen area -- neither orientation shrinks to a sliver.
+    // Every photo keeps its aspect ratio (no cropping) and full rows fill the width.
     function params(W) {
-      if (W < 520) return { H: 150, R: 4, G: 8 };
-      if (W < 860) return { H: 200, R: 3, G: 10 };
-      return { H: 260, R: 3, G: 12 };
+      if (W < 520) return { HL: 150, HP: 225, R: 4, G: 8 };
+      if (W < 860) return { HL: 200, HP: 300, R: 3, G: 10 };
+      return { HL: 240, HP: 360, R: 3, G: 12 };
     }
-    // Greedy justified layout: fill rows until each reaches the full width,
-    // closing a row before or after the next photo, whichever lands nearer H.
-    function buildRows(order, W) {
-      var P = params(W), rows = [], cur = [], sum = 0;
-      for (var i = 0; i < order.length && rows.length < P.R; i++) {
-        var ph = order[i], ar = Math.max(0.55, Math.min(ph.ar, 2.8));
-        var hWith = (W - P.G * cur.length) / (sum + ar);
-        if (hWith > P.H) { cur.push({ ph: ph, ar: ar }); sum += ar; continue; }
-        var hWithout = cur.length ? (W - P.G * (cur.length - 1)) / sum : Infinity;
-        if (cur.length && hWithout < P.H * 1.35 && Math.abs(hWithout - P.H) < Math.abs(hWith - P.H)) {
-          rows.push({ items: cur, h: hWithout });
-          cur = [{ ph: ph, ar: ar }]; sum = ar;
-        } else {
-          cur.push({ ph: ph, ar: ar });
-          rows.push({ items: cur, h: hWith });
-          cur = []; sum = 0;
+    function clampAr(ar) { return Math.max(0.5, Math.min(ar, 2.8)); }
+    function fillRow(q, W, H, G) {
+      var items = [], sum = 0;
+      while (q.length) {
+        var ph = q[0], ar = clampAr(ph.ar);
+        var hWith = (W - G * items.length) / (sum + ar);
+        if (hWith > H) { items.push({ ph: ph, ar: ar }); sum += ar; q.shift(); continue; }
+        var hWithout = items.length ? (W - G * (items.length - 1)) / sum : Infinity;
+        if (items.length && hWithout < H * 1.3 && Math.abs(hWithout - H) < Math.abs(hWith - H)) {
+          return { items: items, h: hWithout };
         }
+        items.push({ ph: ph, ar: ar }); q.shift();
+        return { items: items, h: hWith };
       }
-      return rows.slice(0, P.R);
+      if (!items.length) return null;
+      return { items: items, h: Math.min(H, (W - G * (items.length - 1)) / sum), partial: true };
     }
-    function tile(ph, ar) {
+    function buildRows(order, W, startPortrait) {
+      var P = params(W), rows = [];
+      var land = order.filter(function (ph) { return clampAr(ph.ar) >= 1.15; });
+      var port = order.filter(function (ph) { return clampAr(ph.ar) < 1.15; });
+      for (var r = 0; r < P.R; r++) {
+        var wantP = (r % 2 === 0) === startPortrait;
+        var q = wantP ? port : land, H = wantP ? P.HP : P.HL;
+        if (!q.length) { q = wantP ? land : port; H = wantP ? P.HL : P.HP; }
+        var row = fillRow(q, W, H, P.G);
+        if (!row) break;
+        rows.push(row);
+        if (row.partial) break;
+      }
+      return { rows: rows, G: P.G };
+    }
+    function tile(ph) {
       var a = document.createElement('a');
       a.className = 'pf-tile';
       a.href = BASE; a.target = '_blank'; a.rel = 'noopener';
       a.title = ph.c + (ph.p ? ' — ' + ph.p : '');
-      a.style.flexGrow = ar;
       var img = document.createElement('img');
       img.src = ph.t; img.loading = 'lazy'; img.decoding = 'async';
       img.alt = (ph.cap || ph.c) + (ph.p ? ', ' + ph.p : '');
@@ -833,19 +847,24 @@
       return a;
     }
 
-    var order = shuffle(pool()), lastW = 0;
+    var order = shuffle(pool()), startPortrait = Math.random() < 0.5, lastW = 0;
     function render(animate) {
       var W = mosaic.clientWidth;
       if (!W) return;
       lastW = W;
+      var lay = buildRows(order, W, startPortrait), G = lay.G;
       mosaic.innerHTML = '';
+      mosaic.style.gap = G + 'px';
       var n = 0;
-      buildRows(order, W).forEach(function (row) {
+      lay.rows.forEach(function (row) {
         var r = document.createElement('div');
         r.className = 'pf-row';
         r.style.height = Math.round(row.h) + 'px';
+        r.style.gap = G + 'px';
         row.items.forEach(function (it) {
-          var el = tile(it.ph, it.ar);
+          var el = tile(it.ph);
+          if (row.partial) el.style.flex = '0 0 ' + (it.ar * row.h) + 'px';
+          else el.style.flexGrow = it.ar;
           r.appendChild(el);
           if (animate) { (function (e, idx) { setTimeout(function () { e.classList.add('in'); }, 50 + idx * 45); })(el, n); }
           else { el.classList.add('in'); }
@@ -857,7 +876,7 @@
     if (btn) btn.addEventListener('click', function () {
       btn.classList.add('spin');
       setTimeout(function () { btn.classList.remove('spin'); }, 650);
-      order = shuffle(pool());
+      order = shuffle(pool()); startPortrait = !startPortrait;
       render(true);
     });
     var resizeTimer;
