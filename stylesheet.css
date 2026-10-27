@@ -146,7 +146,9 @@ papertitle {
 
 .experience-item img {
   margin-right: 40px;
-  border-radius: 0;
+  width: 100px; height: 100px; flex: none;
+  object-fit: contain;   /* wide transparent logos sit inside the box, so the */
+  border-radius: 16px;   /* rounded corners only clip empty space            */
 }
 
 /* 论文部分的Flex布局 (这是一个通用的左右图文布局) */
