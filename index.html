@@ -617,6 +617,117 @@
         </ul>
       </section>
 
+      <section class="content gh-section" id="open-source">
+        <div class="gh-head">
+          <div>
+            <heading><b>Open Source</b></heading>
+            <p class="gh-sub">Selected repositories. Star counts update live from GitHub.</p>
+          </div>
+          <a class="gh-total" href="https://github.com/TX-Leo" target="_blank" rel="noopener" aria-label="My GitHub profile">
+            <i class="fa-brands fa-github"></i><span>@TX-Leo</span><span class="gh-total__sep"></span><i class="fa-solid fa-star"></i><b id="gh-total">699</b><span class="gh-total__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+        <div class="gh-grid">
+          <a class="gh-card" data-repo="TX-Leo/HumanEgo" href="https://github.com/TX-Leo/HumanEgo" target="_blank" rel="noopener">
+            <div class="gh-card__top">
+              <span class="gh-card__icon"><i class="fa-brands fa-github"></i></span>
+              <span class="gh-card__name"><span class="gh-owner">TX-Leo /</span> HumanEgo</span>
+              <span class="gh-card__go" aria-hidden="true">&#8599;</span>
+            </div>
+            <p class="gh-card__desc">Zero-shot robot learning from minutes of human egocentric videos: robot-data-free and hardware-agnostic.</p>
+            <div class="gh-tags"><span>Robot Learning</span><span>Egocentric Video</span><span>Flow Matching</span></div>
+            <div class="gh-card__foot">
+              <span class="gh-stars"><i class="fa-solid fa-star"></i><b data-k="stars" data-v="587">587</b><small>stars</small></span>
+              <span class="gh-meta"><i class="fa-solid fa-code-fork"></i><span data-k="forks">56</span></span>
+              <span class="gh-meta"><span class="gh-lang" style="--c:#3572A5"></span>Python</span>
+            </div>
+          </a>
+          <a class="gh-card" data-repo="TX-Leo/DoorBot" href="https://github.com/TX-Leo/DoorBot" target="_blank" rel="noopener">
+            <div class="gh-card__top">
+              <span class="gh-card__icon"><i class="fa-brands fa-github"></i></span>
+              <span class="gh-card__name"><span class="gh-owner">TX-Leo /</span> DoorBot</span>
+              <span class="gh-card__go" aria-hidden="true">&#8599;</span>
+            </div>
+            <p class="gh-card__desc">[ICRA'25] Closed-loop task planning and manipulation for door opening in the wild with haptic feedback.</p>
+            <div class="gh-tags"><span>ICRA 2025</span><span>Mobile Manipulation</span><span>Haptics</span></div>
+            <div class="gh-card__foot">
+              <span class="gh-stars"><i class="fa-solid fa-star"></i><b data-k="stars" data-v="62">62</b><small>stars</small></span>
+              <span class="gh-meta"><i class="fa-solid fa-code-fork"></i><span data-k="forks">6</span></span>
+              <span class="gh-meta"><span class="gh-lang" style="--c:#DA5B0B"></span>Jupyter</span>
+            </div>
+          </a>
+          <a class="gh-card" data-repo="TX-Leo/camera-calibration-handeye-calibration" href="https://github.com/TX-Leo/camera-calibration-handeye-calibration" target="_blank" rel="noopener">
+            <div class="gh-card__top">
+              <span class="gh-card__icon"><i class="fa-brands fa-github"></i></span>
+              <span class="gh-card__name"><span class="gh-owner">TX-Leo /</span> camera-calibration-handeye-calibration</span>
+              <span class="gh-card__go" aria-hidden="true">&#8599;</span>
+            </div>
+            <p class="gh-card__desc">Camera and hand-eye (eye-to-hand) calibration in Python 3, with &lt;1 mm error, for any camera and robot arm.</p>
+            <div class="gh-tags"><span>Hand-Eye Calibration</span><span>Eye-to-Hand</span><span>&lt;1 mm Error</span></div>
+            <div class="gh-card__foot">
+              <span class="gh-stars"><i class="fa-solid fa-star"></i><b data-k="stars" data-v="50">50</b><small>stars</small></span>
+              <span class="gh-meta"><i class="fa-solid fa-code-fork"></i><span data-k="forks">5</span></span>
+              <span class="gh-meta"><span class="gh-lang" style="--c:#3572A5"></span>Python</span>
+            </div>
+          </a>
+        </div>
+        <script>
+        (function () {
+          var cards = [].slice.call(document.querySelectorAll('.gh-card[data-repo]'));
+          var totalEl = document.getElementById('gh-total');
+          if (!cards.length) return;
+          var starEls = cards.map(function (c) { return c.querySelector('[data-k=stars]'); });
+          var vals = starEls.map(function (el) { return parseInt(el.getAttribute('data-v'), 10) || 0; });
+          var shown = false;
+          function fmt(n) { return n.toLocaleString('en-US'); }
+          function count(el, from, to) {
+            var t0 = null, d = 1100;
+            function step(t) {
+              if (!t0) t0 = t;
+              var p = Math.min(1, (t - t0) / d); p = 1 - Math.pow(1 - p, 3);
+              el.textContent = fmt(Math.round(from + (to - from) * p));
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          function sum(a) { return a.reduce(function (x, y) { return x + y; }, 0); }
+          function play(fromZero, old) {
+            starEls.forEach(function (el, i) { count(el, fromZero ? 0 : old[i], vals[i]); });
+            if (totalEl) count(totalEl, fromZero ? 0 : sum(old), sum(vals));
+          }
+          // Count up from zero the first time the section scrolls into view.
+          if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (es) {
+              if (es.some(function (e) { return e.isIntersecting; })) { shown = true; play(true); io.disconnect(); }
+            }, { threshold: 0.25 });
+            io.observe(document.getElementById('open-source'));
+          } else { shown = true; }
+          // Live numbers from the GitHub API, cached for an hour; baked-in values are the fallback.
+          var KEY = 'gh-repos-v1', cache = null;
+          try { cache = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+          var fresh = cache && cache.d && cache.d.length === cards.length && (Date.now() - cache.t < 3600e3);
+          var got = fresh ? Promise.resolve(cache.d) : Promise.all(cards.map(function (c) {
+            return fetch('https://api.github.com/repos/' + c.getAttribute('data-repo'))
+              .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+              .then(function (j) { return { s: j.stargazers_count, f: j.forks_count }; }, function () { return null; });
+          })).then(function (arr) {
+            if (arr.every(Boolean)) { try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: arr })); } catch (e) {} }
+            return arr;
+          });
+          got.then(function (arr) {
+            var old = vals.slice();
+            arr.forEach(function (d, i) {
+              if (!d || typeof d.s !== 'number') return;
+              vals[i] = d.s;
+              if (typeof d.f === 'number') cards[i].querySelector('[data-k=forks]').textContent = fmt(d.f);
+            });
+            if (shown) play(false, old);
+            else { starEls.forEach(function (el, i) { el.textContent = fmt(vals[i]); }); if (totalEl) totalEl.textContent = fmt(sum(vals)); }
+          });
+        })();
+        </script>
+      </section>
+
       <!-- <section class="content">
         <heading><b>Skills</b></b></heading>
         <ul>

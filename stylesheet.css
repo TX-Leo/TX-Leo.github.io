@@ -616,3 +616,79 @@ footer {
     line-height: 1.45;
     color: #777;
 }
+
+/* --- Open Source: GitHub repo cards --- */
+.gh-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.gh-sub { margin: 6px 0 0 !important; font-size: 14.5px !important; color: #888; }
+.gh-total {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 999px;
+    background: linear-gradient(135deg, #24292f 0%, #3a424b 100%);
+    border: 1px solid rgba(227, 160, 8, 0.35);
+    color: #f0f3f6 !important; font-weight: 700; font-size: 14.5px;
+    box-shadow: 0 7px 20px rgba(36, 41, 47, 0.25);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.gh-total .fa-star { color: #e3a008; }
+.gh-total b { font-variant-numeric: tabular-nums; }
+.gh-total__sep { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.22); margin: 0 2px; }
+.gh-total__arrow { color: #e3a008; transition: transform .25s ease; }
+.gh-total:hover { transform: translateY(-2px); border-color: rgba(227, 160, 8, 0.8); box-shadow: 0 12px 26px rgba(36, 41, 47, 0.32); color: #fff !important; }
+.gh-total:hover .gh-total__arrow { transform: translateX(3px); }
+
+.gh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 900px) { .gh-grid { grid-template-columns: 1fr; } }
+
+.gh-card {
+    position: relative; display: flex; flex-direction: column; gap: 12px;
+    padding: 22px 20px 16px; border-radius: 14px; overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fbf8f4 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px rgba(20, 26, 30, 0.06);
+    color: #333 !important; text-decoration: none !important;
+    transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, border-color .28s ease;
+}
+.gh-card::before {   /* thin orange-to-gold accent along the top edge */
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+    background: linear-gradient(90deg, #C45A0E 0%, #e3a008 100%);
+}
+.gh-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 90, 14, 0.35);
+    box-shadow: 0 18px 36px rgba(196, 90, 14, 0.14), 0 2px 6px rgba(20, 26, 30, 0.05);
+}
+.gh-card__top { display: flex; align-items: flex-start; gap: 10px; }
+.gh-card__icon {
+    flex: none; width: 32px; height: 32px; border-radius: 9px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #24292f; color: #fff; font-size: 17px;
+}
+.gh-card__name {
+    font-weight: 800; font-size: 16.5px; line-height: 1.3; color: #1f2328;
+    overflow-wrap: anywhere; padding-top: 5px;
+}
+.gh-owner { font-weight: 500; color: #8a8f96; }
+.gh-card__go { margin-left: auto; padding-top: 3px; color: #b6bac0; font-size: 18px; transition: transform .25s ease, color .25s ease; }
+.gh-card:hover .gh-card__go { color: #C45A0E; transform: translate(2px, -2px); }
+.gh-card__desc { margin: 0 !important; flex: 1; font-size: 14.5px !important; line-height: 1.55; color: #555; }
+.gh-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.gh-tags span {
+    font-size: 11.5px; font-weight: 600; color: #9a4a10; line-height: 1.6;
+    background: rgba(196, 90, 14, 0.07); border: 1px solid rgba(196, 90, 14, 0.18);
+    padding: 1px 9px; border-radius: 999px;
+}
+.gh-card__foot {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 13.5px; color: #666;
+}
+.gh-stars { display: inline-flex; align-items: baseline; gap: 6px; color: #1f2328; }
+.gh-stars i { color: #e3a008; font-size: 15px; align-self: center; }
+.gh-stars b { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.gh-stars small { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8a8f96; }
+.gh-meta { display: inline-flex; align-items: center; gap: 6px; }
+.gh-lang { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+@media (prefers-reduced-motion: reduce) { .gh-card, .gh-total, .gh-card__go, .gh-total__arrow { transition: none; } }
