@@ -99,7 +99,9 @@ papertitle {
   padding: 25px;
   background: #fff;
   margin: 20px 0; /* 修改了边距，上下20px，左右0 */
-  border-bottom: #35424a 3px solid;
+  border-radius: 16px;                      /* rounded card, matches the Photography panel */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(20, 26, 30, 0.07);
 }
 
 .content:last-child {
@@ -336,12 +338,14 @@ footer {
 .pf-shuffle:hover .pf-shuffle-icon { transform: rotate(180deg); }
 .pf-shuffle.spin .pf-shuffle-icon { transform: rotate(540deg); }
 
-.pf-mosaic { position: relative; z-index: 1; column-count: 4; column-gap: 12px; }
-@media (max-width: 900px) { .pf-mosaic { column-count: 3; } }
-@media (max-width: 560px) { .pf-mosaic { column-count: 2; column-gap: 10px; } }
+.pf-mosaic { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; }
+/* Justified rows: every photo in a row shares the row height and keeps its
+   aspect ratio (flex-grow = width/height), so landscapes get real width. */
+.pf-row { display: flex; gap: 12px; }
+@media (max-width: 560px) { .pf-mosaic, .pf-row { gap: 8px; } }
 
 .pf-tile {
-    break-inside: avoid; margin: 0 0 12px;
+    flex: 1 1 0; min-width: 0;
     position: relative; display: block; line-height: 0;
     overflow: hidden; border-radius: 8px; background: #17171b;
     opacity: 0; transform: translateY(16px) scale(.985);
@@ -349,7 +353,7 @@ footer {
 }
 .pf-tile.in { opacity: 1; transform: none; }
 .pf-tile img {
-    width: 100%; height: auto; display: block; border-radius: 8px; max-width: 100%;
+    width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; max-width: 100%;
     filter: grayscale(.3) contrast(1.02);
     transition: transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s ease;
 }
@@ -577,3 +581,36 @@ footer {
 .misc-chevron { display: inline-block; transition: transform .2s ease; font-size: 12px; }
 .misc-more[open] .misc-chevron { transform: rotate(180deg); }
 .misc-more > ul { margin-top: 14px; }
+
+/* --- Chat badge: same pill as Photography badge, in the site's orange --- */
+.profile-info a.photo-badge { width: 262px; box-sizing: border-box; }
+.profile-info a.photo-badge .photo-badge__arrow { margin-left: auto; }
+.chat-badge-wrap { margin-top: 10px; }
+.profile-info a.chat-badge {
+    background: linear-gradient(135deg, #b3500c 0%, #d46a1f 100%);
+    border-color: rgba(255, 214, 170, 0.55);
+    color: #fff7ee !important;
+    box-shadow: 0 7px 20px rgba(196, 90, 14, 0.30),
+                0 1px 0 rgba(255, 255, 255, 0.10) inset;
+}
+.chat-badge .photo-badge__icon {
+    background: linear-gradient(135deg, #fff3e4 0%, #f3d2ad 100%);
+    color: #b3500c;
+    box-shadow: 0 2px 7px rgba(120, 50, 5, 0.35);
+}
+.chat-badge .photo-badge__sub,
+.chat-badge .photo-badge__arrow { color: #ffe2c2; }
+.profile-info a.chat-badge:hover {
+    border-color: rgba(255, 228, 196, 0.95);
+    color: #ffffff !important;
+    box-shadow: 0 13px 28px rgba(196, 90, 14, 0.40),
+                0 0 0 1px rgba(255, 214, 170, 0.35),
+                0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
+.chat-note {
+    max-width: 262px;
+    margin: 10px auto 0 !important;
+    font-size: 13px !important;
+    line-height: 1.45;
+    color: #777;
+}

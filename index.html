@@ -31,23 +31,6 @@
     .pub-title-logo.forceband { height: 2.2em; }
     .pub-title-logo.doorbot { height: 2.4em; }
     .image-container video { max-width: 100%; height: auto; display: block; border-radius: 12px; }
-    /* "Book a 15-min chat" call-to-action in the intro */
-    .chat-invite { margin: 4px 0 20px; padding: 15px 18px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(196,90,14,0.07), rgba(196,90,14,0.02));
-      border: 1px solid rgba(196,90,14,0.22); }
-    .chat-invite p.chat-invite__text { margin: 0 0 13px !important; font-size: 15.5px;
-      color: #444; line-height: 1.65; text-align: left; }
-    .chat-cta { display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px;
-      border-radius: 999px; text-decoration: none; color: #fff !important; font-weight: 700;
-      font-size: 15px; letter-spacing: .2px;
-      background: linear-gradient(135deg, #d2691e 0%, #C45A0E 55%, #a94d0b 100%);
-      box-shadow: 0 6px 16px rgba(196,90,14,0.30);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
-    .chat-cta:hover { filter: brightness(1.06); transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(196,90,14,0.40); }
-    .chat-cta i { margin-right: 0; }
-    .chat-cta .arrow { transition: transform .15s ease; }
-    .chat-cta:hover .arrow { transform: translateX(3px); }
   </style>
   <!-- <style>
     body {
@@ -187,16 +170,6 @@
           <p>
             <b>Goal</b>: Let robots learn from <u><b>multimodal information</b></u>, like human videos and haptics, to achieve fine-grained and <u><b>general-purpose robotic manipulation</b></u>.
           </p>
-          <div class="chat-invite">
-            <p class="chat-invite__text">
-              <b>Let's chat!</b> Feel free to book a <b>15-minute call</b> with me — about research, startups, or anything else. Undergrads and master's/PhD students are all welcome.
-            </p>
-            <a class="chat-cta" href="https://calendly.com/leo-tx/chat-with-leo" target="_blank" rel="noopener">
-              <i class="fa-regular fa-calendar-check"></i>
-              <span>Book a 15-min Chat</span>
-              <span class="arrow">&rarr;</span>
-            </a>
-          </div>
           <p style="text-align:center">
             <!-- <a href="mailto:tx.leo.wz@gmail.com"><b>Email</b></a>  /  -->
             <a href="data/CV-Zhi Wang-2026-10-06.pdf"><b>CV</b></a>  / 
@@ -231,6 +204,17 @@
               </span>
               <span class="photo-badge__arrow" aria-hidden="true">&rarr;</span>
             </a>
+          </div>
+          <div class="photo-badge-wrap chat-badge-wrap">
+            <a class="photo-badge chat-badge" href="https://calendly.com/leo-tx/chat-with-leo" target="_blank" rel="noopener" aria-label="Book a 15-minute chat with me on Calendly">
+              <span class="photo-badge__icon"><i class="fa-regular fa-calendar-check"></i></span>
+              <span class="photo-badge__text">
+                <span class="photo-badge__title">Book a 15-min&nbsp;Chat</span>
+                <span class="photo-badge__sub">Research &middot; Startups</span>
+              </span>
+              <span class="photo-badge__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="chat-note">Happy to chat about research, startups, or anything else. Undergrads and master's/PhD students are all welcome!</p>
           </div>
           <div class="view-counter" id="view-counter" style="margin-top: 0.6em; font-size: 0.9em; color: #888; visibility: hidden;">
             <i class="fa-regular fa-eye" style="opacity: 0.75;"></i>
@@ -277,6 +261,7 @@
     <section class="content">
         <heading><b>Updates</b></heading>
         <ul>
+          <li><b>Nov, 2026</b>, We are hosting the 1st Workshop on <a href="https://spin-workshop.github.io/"><span style="color: #C45A0E;">Structured Physical Intelligence (SPIN)</span></a> at <a href="https://www.corl.org/"><span style="color: #C45A0E;">CoRL2026</span></a> in Austin on Nov 12, where I serve as a Program Chair. Come join us!</li>
           <li><b>Oct, 2026</b>, <a href="https://humanego-ai.github.io/"><span style="color: #C45A0E;">HumanEgo</span></a> received the <b>Best Paper Award</b> at the <a href="https://worlds-iros2026.github.io/"><span style="color: #C45A0E;">WORLDS</span></a> workshop and the <b>Best Demo Paper Award</b> at the <a href="https://scale-infra.github.io/iros2026/"><span style="color: #C45A0E;">ScaleInfra</span></a> workshop at <a href="https://2026.ieee-iros.org/"><span style="color: #C45A0E;">IROS2026</span></a>.</li>
           <li><b>Oct, 2026</b>, I went to Pittsburgh to attend <a href="https://2026.ieee-iros.org/"><span style="color: #C45A0E;">IROS2026</span></a>.</li>
           <li><b>Sept, 2026</b>, <a href="https://forceband-emg.github.io/"><span style="color: #C45A0E;">ForceBand</span></a> was accepted to <a href="https://www.corl.org/"><span style="color: #C45A0E;">CoRL2026</span></a>.</li>
@@ -507,7 +492,7 @@
         <li class="experience-item">
           <img src="images/ZhenFund.png" width="100" height="100">
           <div>
-            <a href="https://zhenfund.com"><b>ZhenFund | 真格基金</b></a><br>
+            <a href="https://zhenfund.com"><b>ZhenFund</b></a><br>
             Investment Intern • Mar. 2025 to Aug. 2025 (3 mos)<br>
             Advisor: <a href="https://www.linkedin.com/in/yusen/"><b>Yusen Dai</b></a> and <a href="https://www.linkedin.com/in/debbie-w-68a813b7/"><b>Debbie Wang</b></a>
           </div>
@@ -531,7 +516,7 @@
         <li class="experience-item">
           <img src="images/encosmart-logo.png" width="100" height="100"> 
           <div>
-            <a href="http://encosmart.com/home"><b>EncoSmart Technology (Beijing) Co., LTD | 享刻智能</b></a><br>
+            <a href="http://encosmart.com/home"><b>EncoSmart Technology (Beijing) Co., LTD</b></a><br>
             Research Intern • Apr. 2023 to Jun. 2023  (3 mos)
           </div>
         </li>
@@ -784,57 +769,105 @@
         var out = [];
         window.GALLERY.categories.forEach(function (cat) {
           (cat.photos || []).forEach(function (ph) {
-            out.push({ t: BASE + ph.thumb, c: cat.name, p: ph.place || '', cap: ph.caption || '' });
+            out.push({ t: BASE + ph.thumb, c: cat.name, p: ph.place || '', cap: ph.caption || '',
+                       ar: (ph.w && ph.h) ? ph.w / ph.h : 1.5 });
           });
         });
         if (out.length) return out;
       }
-      return FALLBACK;
+      return FALLBACK.map(function (ph) { ph.ar = 1.5; return ph; });
     }
-    function sample(arr, n) {
-      var a = arr.slice(), r = [];
-      n = Math.min(n, a.length);
-      for (var i = 0; i < n; i++) r.push(a.splice(Math.floor(Math.random() * a.length), 1)[0]);
-      return r;
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+      return a;
     }
     var mosaic = document.getElementById('pf-mosaic');
     var btn = document.getElementById('pf-shuffle');
     if (!mosaic) return;
-    var COUNT = window.innerWidth <= 560 ? 8 : (window.innerWidth <= 900 ? 9 : 12);
 
-    function render() {
-      var chosen = sample(pool(), COUNT);
+    // Target row height, number of rows, and gap for the current width.
+    function params(W) {
+      if (W < 520) return { H: 150, R: 4, G: 8 };
+      if (W < 860) return { H: 200, R: 3, G: 10 };
+      return { H: 260, R: 3, G: 12 };
+    }
+    // Greedy justified layout: fill rows until each reaches the full width,
+    // closing a row before or after the next photo, whichever lands nearer H.
+    function buildRows(order, W) {
+      var P = params(W), rows = [], cur = [], sum = 0;
+      for (var i = 0; i < order.length && rows.length < P.R; i++) {
+        var ph = order[i], ar = Math.max(0.55, Math.min(ph.ar, 2.8));
+        var hWith = (W - P.G * cur.length) / (sum + ar);
+        if (hWith > P.H) { cur.push({ ph: ph, ar: ar }); sum += ar; continue; }
+        var hWithout = cur.length ? (W - P.G * (cur.length - 1)) / sum : Infinity;
+        if (cur.length && hWithout < P.H * 1.35 && Math.abs(hWithout - P.H) < Math.abs(hWith - P.H)) {
+          rows.push({ items: cur, h: hWithout });
+          cur = [{ ph: ph, ar: ar }]; sum = ar;
+        } else {
+          cur.push({ ph: ph, ar: ar });
+          rows.push({ items: cur, h: hWith });
+          cur = []; sum = 0;
+        }
+      }
+      return rows.slice(0, P.R);
+    }
+    function tile(ph, ar) {
+      var a = document.createElement('a');
+      a.className = 'pf-tile';
+      a.href = BASE; a.target = '_blank'; a.rel = 'noopener';
+      a.title = ph.c + (ph.p ? ' — ' + ph.p : '');
+      a.style.flexGrow = ar;
+      var img = document.createElement('img');
+      img.src = ph.t; img.loading = 'lazy'; img.decoding = 'async';
+      img.alt = (ph.cap || ph.c) + (ph.p ? ', ' + ph.p : '');
+      a.appendChild(img);
+      var cap = document.createElement('span'); cap.className = 'pf-cap';
+      var t = document.createElement('span'); t.className = 'pf-cap-t';
+      t.textContent = ph.cap || ph.c; cap.appendChild(t);
+      var sub = document.createElement('span'); sub.className = 'pf-cap-p';
+      var showPlace = ph.p && ph.cap.toLowerCase().indexOf(ph.p.toLowerCase()) < 0;
+      sub.textContent = ph.c + (showPlace ? ' · ' + ph.p : '');
+      cap.appendChild(sub);
+      a.appendChild(cap);
+      return a;
+    }
+
+    var order = shuffle(pool()), lastW = 0;
+    function render(animate) {
+      var W = mosaic.clientWidth;
+      if (!W) return;
+      lastW = W;
       mosaic.innerHTML = '';
-      chosen.forEach(function (ph, i) {
-        var a = document.createElement('a');
-        a.className = 'pf-tile';
-        a.href = BASE; a.target = '_blank'; a.rel = 'noopener';
-        a.title = ph.c + (ph.p ? ' — ' + ph.p : '');
-
-        var img = document.createElement('img');
-        img.src = ph.t; img.loading = 'lazy'; img.decoding = 'async';
-        img.alt = (ph.cap || ph.c) + (ph.p ? ', ' + ph.p : '');
-        a.appendChild(img);
-
-        var cap = document.createElement('span'); cap.className = 'pf-cap';
-        var t = document.createElement('span'); t.className = 'pf-cap-t';
-        t.textContent = ph.cap || ph.c; cap.appendChild(t);
-        var sub = document.createElement('span'); sub.className = 'pf-cap-p';
-        var showPlace = ph.p && ph.cap.toLowerCase().indexOf(ph.p.toLowerCase()) < 0;
-        sub.textContent = ph.c + (showPlace ? ' · ' + ph.p : '');
-        cap.appendChild(sub);
-        a.appendChild(cap);
-
-        mosaic.appendChild(a);
-        (function (el, idx) { setTimeout(function () { el.classList.add('in'); }, 50 + idx * 45); })(a, i);
+      var n = 0;
+      buildRows(order, W).forEach(function (row) {
+        var r = document.createElement('div');
+        r.className = 'pf-row';
+        r.style.height = Math.round(row.h) + 'px';
+        row.items.forEach(function (it) {
+          var el = tile(it.ph, it.ar);
+          r.appendChild(el);
+          if (animate) { (function (e, idx) { setTimeout(function () { e.classList.add('in'); }, 50 + idx * 45); })(el, n); }
+          else { el.classList.add('in'); }
+          n++;
+        });
+        mosaic.appendChild(r);
       });
     }
     if (btn) btn.addEventListener('click', function () {
       btn.classList.add('spin');
       setTimeout(function () { btn.classList.remove('spin'); }, 650);
-      render();
+      order = shuffle(pool());
+      render(true);
     });
-    render();
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (Math.abs(mosaic.clientWidth - lastW) > 4) render(false);
+      }, 150);
+    });
+    render(true);
   })();
   </script>
 </body>
