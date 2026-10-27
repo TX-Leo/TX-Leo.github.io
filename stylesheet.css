@@ -692,3 +692,4 @@ footer {
 .gh-meta { display: inline-flex; align-items: center; gap: 6px; }
 .gh-lang { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
 @media (prefers-reduced-motion: reduce) { .gh-card, .gh-total, .gh-card__go, .gh-total__arrow { transition: none; } }
+.gh-total__label { font-weight: 600; font-size: 12px; letter-spacing: .03em; color: #c9d1d9; margin-left: -2px; }

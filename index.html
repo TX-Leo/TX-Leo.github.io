@@ -623,10 +623,10 @@
         <div class="gh-head">
           <div>
             <heading><b>Open Source</b></heading>
-            <p class="gh-sub">Selected repositories. Star counts update live from GitHub.</p>
+            <p class="gh-sub">Selected repositories. Star counts (and the total across all my repos) update live from GitHub.</p>
           </div>
           <a class="gh-total" href="https://github.com/TX-Leo" target="_blank" rel="noopener" aria-label="My GitHub profile">
-            <i class="fa-brands fa-github"></i><span>@TX-Leo</span><span class="gh-total__sep"></span><i class="fa-solid fa-star"></i><b id="gh-total">699</b><span class="gh-total__arrow" aria-hidden="true">&rarr;</span>
+            <i class="fa-brands fa-github"></i><span>@TX-Leo</span><span class="gh-total__sep"></span><i class="fa-solid fa-star"></i><b id="gh-total" data-v="869">869</b><span class="gh-total__label">total stars</span><span class="gh-total__arrow" aria-hidden="true">&rarr;</span>
           </a>
         </div>
         <div class="gh-grid">
@@ -680,6 +680,7 @@
           if (!cards.length) return;
           var starEls = cards.map(function (c) { return c.querySelector('[data-k=stars]'); });
           var vals = starEls.map(function (el) { return parseInt(el.getAttribute('data-v'), 10) || 0; });
+          var total = totalEl ? (parseInt(totalEl.getAttribute('data-v'), 10) || 0) : 0;
           var shown = false;
           function fmt(n) { return n.toLocaleString('en-US'); }
           function count(el, from, to) {
@@ -692,40 +693,47 @@
             }
             requestAnimationFrame(step);
           }
-          function sum(a) { return a.reduce(function (x, y) { return x + y; }, 0); }
-          function play(fromZero, old) {
-            starEls.forEach(function (el, i) { count(el, fromZero ? 0 : old[i], vals[i]); });
-            if (totalEl) count(totalEl, fromZero ? 0 : sum(old), sum(vals));
+          function play(old, oldTotal) {
+            starEls.forEach(function (el, i) { count(el, old ? old[i] : 0, vals[i]); });
+            if (totalEl) count(totalEl, old ? oldTotal : 0, total);
           }
           // Count up from zero the first time the section scrolls into view.
           if ('IntersectionObserver' in window) {
             var io = new IntersectionObserver(function (es) {
-              if (es.some(function (e) { return e.isIntersecting; })) { shown = true; play(true); io.disconnect(); }
+              if (es.some(function (e) { return e.isIntersecting; })) { shown = true; play(); io.disconnect(); }
             }, { threshold: 0.25 });
             io.observe(document.getElementById('open-source'));
           } else { shown = true; }
-          // Live numbers from the GitHub API, cached for an hour; baked-in values are the fallback.
-          var KEY = 'gh-repos-v1', cache = null;
+          // One API call lists every repo I own: the total sums stars over all
+          // non-fork repos, and the three cards read their numbers from the same
+          // list. Cached for an hour; the baked-in values are the fallback.
+          var KEY = 'gh-repos-v2', cache = null;
           try { cache = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
-          var fresh = cache && cache.d && cache.d.length === cards.length && (Date.now() - cache.t < 3600e3);
-          var got = fresh ? Promise.resolve(cache.d) : Promise.all(cards.map(function (c) {
-            return fetch('https://api.github.com/repos/' + c.getAttribute('data-repo'))
+          var fresh = cache && cache.repos && (Date.now() - cache.t < 3600e3);
+          var got = fresh ? Promise.resolve(cache.repos) :
+            fetch('https://api.github.com/users/TX-Leo/repos?per_page=100&type=owner')
               .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-              .then(function (j) { return { s: j.stargazers_count, f: j.forks_count }; }, function () { return null; });
-          })).then(function (arr) {
-            if (arr.every(Boolean)) { try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: arr })); } catch (e) {} }
-            return arr;
-          });
-          got.then(function (arr) {
-            var old = vals.slice();
-            arr.forEach(function (d, i) {
-              if (!d || typeof d.s !== 'number') return;
-              vals[i] = d.s;
-              if (typeof d.f === 'number') cards[i].querySelector('[data-k=forks]').textContent = fmt(d.f);
+              .then(function (list) {
+                var repos = list.map(function (r) { return { n: r.full_name, s: r.stargazers_count, f: r.forks_count, fork: r.fork }; });
+                try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), repos: repos })); } catch (e) {}
+                return repos;
+              });
+          got.then(function (repos) {
+            var old = vals.slice(), oldTotal = total, by = {};
+            repos.forEach(function (r) { by[r.n.toLowerCase()] = r; });
+            total = repos.reduce(function (acc, r) { return acc + (r.fork ? 0 : (r.s || 0)); }, 0);
+            cards.forEach(function (c, i) {
+              var r = by[c.getAttribute('data-repo').toLowerCase()];
+              if (!r) return;
+              vals[i] = r.s;
+              c.querySelector('[data-k=forks]').textContent = fmt(r.f);
             });
-            if (shown) play(false, old);
-            else { starEls.forEach(function (el, i) { el.textContent = fmt(vals[i]); }); if (totalEl) totalEl.textContent = fmt(sum(vals)); }
-          });
+            if (shown) play(old, oldTotal);
+            else {
+              starEls.forEach(function (el, i) { el.textContent = fmt(vals[i]); });
+              if (totalEl) totalEl.textContent = fmt(total);
+            }
+          }, function () { /* keep the baked-in numbers */ });
         })();
         </script>
       </section>
