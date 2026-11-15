@@ -693,3 +693,13 @@ footer {
 .gh-lang { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
 @media (prefers-reduced-motion: reduce) { .gh-card, .gh-total, .gh-card__go, .gh-total__arrow { transition: none; } }
 .gh-total__label { font-weight: 600; font-size: 12px; letter-spacing: .03em; color: #c9d1d9; margin-left: -2px; }
+
+/* small gold chip for reviewer awards in Reviewer Service */
+.rv-award {
+    display: inline-flex; align-items: center; gap: 5px; margin-left: 6px;
+    padding: 1px 9px; border-radius: 999px; vertical-align: 1px;
+    font-size: 12px; font-weight: 700; letter-spacing: .02em; color: #8a5a00;
+    background: linear-gradient(135deg, #fff4d6 0%, #f6dd9b 100%);
+    border: 1px solid rgba(184, 134, 11, 0.45);
+}
+.rv-award i { color: #c8930a; font-size: 11px; }
